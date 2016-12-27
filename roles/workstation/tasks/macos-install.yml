@@ -1,0 +1,24 @@
+---
+  - name: Install base packages
+    homebrew:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - mysql
+      - redis
+      - memcached
+      - neovim
+      - tmux
+      - node
+      - yarn
+      - editorconfig
+      - cmake
+      - entr
+      - python
+      - python3
+      - the_silver_searcher
+      - universal_ctags
+      - zsh
+
+  - name: Set shell
+    command: echo "Fixme"
