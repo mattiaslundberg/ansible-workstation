@@ -1,0 +1,19 @@
+---
+  - name: Install base packages
+    become: true
+    pacman:
+      name: "{{ item }}"
+    with_items:
+      - mariadb
+      - redis
+      - memcached
+      - neovim
+      - tmux
+      - nodejs
+      - editorconfig-core-c
+      - cmake
+      - python2
+      - python3
+      - python-pip
+      - the_silver_searcher
+      - zsh

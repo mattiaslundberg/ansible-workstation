@@ -1,0 +1,33 @@
+---
+  - name: Install base packages
+    homebrew:
+      name: "{{ item }}"
+    with_items:
+      - mysql
+      - redis
+      - memcached
+      - neovim
+      - tmux
+      - node
+      - yarn
+      - editorconfig
+      - cmake
+      - entr
+      - python
+      - python3
+      - the_silver_searcher
+      - universal-ctags
+      - zsh
+
+  - name: Install pip
+    easy_install:
+      name: pip
+
+  - name: Install python packages
+    pip:
+      name: "{{ item }}"
+    with_items:
+      - virtualenvwrapper
+      - isort
+      - neovim
+      - flake8
