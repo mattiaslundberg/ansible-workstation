@@ -1,4 +1,4 @@
-Ansible setup for workstation
+Ansible playbook/roles for setup of workstation
 
 Requires ansible to be installed:
 
@@ -12,5 +12,3 @@ brew install ansible
 ```
 ansible-playbook -i inventory site.yml
 ```
-
-TODO: apt os
