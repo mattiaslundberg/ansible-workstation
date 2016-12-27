@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  become: false
+  roles:
+   - role: workstation
