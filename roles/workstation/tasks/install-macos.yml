@@ -18,6 +18,7 @@
       - the_silver_searcher
       - universal-ctags
       - zsh
+      - git
 
   - name: Install pip
     easy_install:

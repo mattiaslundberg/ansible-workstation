@@ -17,3 +17,4 @@
       - python-pip
       - the_silver_searcher
       - zsh
+      - git

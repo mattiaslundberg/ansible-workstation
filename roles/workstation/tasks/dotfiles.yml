@@ -1,0 +1,54 @@
+---
+- name: Clone repo
+  git:
+    dest: ~/.dotfiles
+    repo: "git@github.com:mattiaslundberg/dotfiles.git"
+    recursive: yes
+
+- name: Create common symlinks
+  file:
+    state: link
+    src: "~/.dotfiles/{{ item }}"
+    dest: "~/{{ item }}"
+  with_items:
+    - .aliases
+    - .bashrc
+    - bin
+    - .zsh
+    - .zprofile
+    - .zshrc
+    - .colormap
+    - .ctags
+    - .gitconfig
+    - .gitignore_global
+    - .hgrc
+    - .inputrc
+    - .screenrc
+    - .sshrc
+    - .sshrc.d
+    - .tmux.conf
+    - .vimsnippets
+
+- name: Create linux symlinks
+  file:
+    state: link
+    src: "~/.dotfiles/{{ item }}"
+    dest: "~/{{ item }}"
+  with_items:
+    - .keymap.xkb
+    - .themes
+    - .xsessionrc
+  when: ansible_os_family == "Archlinux"
+
+- name: Create nvim config
+  file:
+    state: link
+    src: "~/.dotfiles/.config/nvim/init.vim"
+    dest: "~/.config/nvim/init.vim"
+
+- name: Create openbox config
+  file:
+    state: link
+    src: "~/.dotfiles/.config/openbox"
+    dest: "~/.config/openbox"
+  when: ansible_os_family == "Archlinux"
