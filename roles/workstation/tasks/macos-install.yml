@@ -17,7 +17,7 @@
       - python
       - python3
       - the_silver_searcher
-      - universal_ctags
+      - universal-ctags
       - zsh
 
   - name: Set shell
