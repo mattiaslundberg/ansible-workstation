@@ -1,0 +1,6 @@
+---
+- name: Add keymap
+  become: true
+  copy:
+    dest: /Library/Keyboard\ Layouts/
+    src: roles/workstation/files/keymap/

@@ -16,3 +16,7 @@
 - name: Add dotfiles
   include: dotfiles.yml
   tags: [dotfiles]
+
+- include: keymap-macos.yml
+  when: ansible_os_family == "Darwin"
+  tags: [keymap]
