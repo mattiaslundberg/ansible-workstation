@@ -49,8 +49,11 @@
 - name: Create openbox config
   file:
     state: link
-    src: "~/.dotfiles/.config/openbox"
-    dest: "~/.config/openbox"
+    src: "~/.dotfiles/.config/{{ item }}"
+    dest: "~/.config/{{ item }}"
+  with_items:
+    - openbox
+    - tint2
   when: ansible_os_family == "Archlinux"
 
 - name: Install nvim-plug
