@@ -52,3 +52,11 @@
     src: "~/.dotfiles/.config/openbox"
     dest: "~/.config/openbox"
   when: ansible_os_family == "Archlinux"
+
+- name: Install nvim-plug
+  shell: nvim +wq
+  args:
+    creates: ~/.config/nvim/autoload/plug.vim
+
+- name: Install nvim plugins
+  shell: nvim +PlugInstall +wq
