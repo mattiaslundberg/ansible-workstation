@@ -1,21 +1,21 @@
 ---
-  - name: Install base packages
-    homebrew:
-      name: "{{ item }}"
-    with_items:
-      - mysql
-      - redis
-      - memcached
-      - neovim
-      - tmux
-      - node
-      - yarn
-      - editorconfig
-      - cmake
-      - entr
-      - python
-      - python3
-      - the_silver_searcher
-      - universal-ctags
-      - zsh
-      - git
+- name: Install base packages
+  homebrew:
+    name: "{{ item }}"
+  with_items:
+    - mysql
+    - redis
+    - memcached
+    - neovim
+    - tmux
+    - node
+    - yarn
+    - editorconfig
+    - cmake
+    - entr
+    - python
+    - python3
+    - the_silver_searcher
+    - universal-ctags
+    - zsh
+    - git

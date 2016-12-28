@@ -1,23 +1,23 @@
 ---
-  - name: Install tmuxinator
-    gem:
-      name: tmuxinator
+- name: Install tmuxinator
+  gem:
+    name: tmuxinator
 
-  - name: Install eslint
-    npm:
-      name: eslint
-      global: yes
+- name: Install eslint
+  npm:
+    name: eslint
+    global: yes
 
-  - name: Install pip
-    easy_install:
-      name: pip
+- name: Install pip
+  easy_install:
+    name: pip
 
-  - name: Install python packages
-    pip:
-      name: "{{ item }}"
-    become: true
-    with_items:
-      - virtualenvwrapper
-      - isort
-      - neovim
-      - flake8
+- name: Install python packages
+  pip:
+    name: "{{ item }}"
+  become: true
+  with_items:
+    - virtualenvwrapper
+    - isort
+    - neovim
+    - flake8
