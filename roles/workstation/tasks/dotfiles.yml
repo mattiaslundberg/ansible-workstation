@@ -54,9 +54,11 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Install nvim-plug
-  shell: nvim +wq
+  shell: nvim +wq --headless
   args:
     creates: ~/.config/nvim/autoload/plug.vim
+  tags: [vim]
 
 - name: Install nvim plugins
-  shell: nvim +PlugInstall +wq
+  shell: nvim +PlugInstall +qall --headless
+  tags: [vim]

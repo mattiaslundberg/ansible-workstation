@@ -15,6 +15,7 @@
   - name: Install python packages
     pip:
       name: "{{ item }}"
+    become: true
     with_items:
       - virtualenvwrapper
       - isort

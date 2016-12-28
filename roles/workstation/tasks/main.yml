@@ -1,14 +1,18 @@
 ---
-  - include: install-macos.yml
-    when: ansible_os_family == "Darwin"
-    tags: [install]
+- name: Install macOS packages
+  include: install-macos.yml
+  when: ansible_os_family == "Darwin"
+  tags: [install]
 
-  - include: install-arch.yml
-    when: ansible_os_family == "Archlinux"
-    tags: [install]
+- name: Install Arch linux packages
+  include: install-arch.yml
+  when: ansible_os_family == "Archlinux"
+  tags: [install]
 
-  - include: install-common.yml
-    tags: [install]
+- name: Install system independent packages
+  include: install-common.yml
+  tags: [install]
 
-  - include: dotfiles.yml
-    tags: [dotfiles]
+- name: Add dotfiles
+  include: dotfiles.yml
+  tags: [dotfiles]
