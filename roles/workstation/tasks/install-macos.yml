@@ -20,9 +20,17 @@
     - python
     - python3
     - the_silver_searcher
-    - universal-ctags
     - zsh
     - git
+
+- name: Add brew zsh as allowed shell
+  become: true
+  template:
+    src: templates/shells.j2
+    dest: /etc/shells 
+
+- name: Set loginshell
+  shell: chsh -s /usr/local/bin/zsh
 
 - name: Tap cask
   homebrew_tap:
