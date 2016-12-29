@@ -1,4 +1,8 @@
 ---
+- name: Tap nvim
+  homebrew_tap:
+    name: neovim/neovim
+
 - name: Install base packages
   homebrew:
     name: "{{ item }}"
