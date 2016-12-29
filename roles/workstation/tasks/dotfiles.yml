@@ -5,6 +5,13 @@
     repo: "git@github.com:mattiaslundberg/dotfiles.git"
     recursive: yes
 
+- name: Create config folders
+  file:
+    state: directory
+    dest: "~/{{ item }}"
+  with_items:
+    - .config/nvim
+
 - name: Create common symlinks
   file:
     state: link
@@ -19,7 +26,6 @@
     - .zshrc
     - .colormap
     - .ctags
-    - .gitconfig
     - .gitignore_global
     - .hgrc
     - .inputrc
@@ -57,11 +63,11 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Install nvim-plug
-  shell: nvim +wq --headless
+  shell: nvim +qall! --headless
   args:
     creates: ~/.config/nvim/autoload/plug.vim
   tags: [vim]
 
 - name: Install nvim plugins
-  shell: nvim +PlugInstall +qall --headless
+  shell: nvim +PlugInstall! +qall! --headless
   tags: [vim]
