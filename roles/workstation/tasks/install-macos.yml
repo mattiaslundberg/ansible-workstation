@@ -19,3 +19,24 @@
     - universal-ctags
     - zsh
     - git
+
+- name: Tap cask
+  homebrew_tap:
+    name: caskroom/cask
+
+- name: Install Graphical packages
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items:
+    - firefox
+    - google-chrome
+    - vivaldi
+    - dropbox
+    - 1password
+    - bettertouchtool
+    - dash
+    - karabiner
+    - seil
+    - virtualbox
+    - sublime-text
+    - iterm2
