@@ -24,6 +24,7 @@
     - git
     - hub
     - reattach-to-user-namespace
+    - sshrc
 
 - name: Add brew zsh as allowed shell
   become: true
