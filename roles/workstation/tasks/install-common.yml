@@ -1,7 +1,10 @@
 ---
-- name: Install tmuxinator
+- name: Install gems
   gem:
-    name: tmuxinator
+    name: "{{ item }}"
+  with_items:
+    - tmuxinator
+    - ghi
 
 - name: Install eslint
   npm:

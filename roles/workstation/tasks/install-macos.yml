@@ -22,6 +22,8 @@
     - the_silver_searcher
     - zsh
     - git
+    - hub
+    - reattach-to-user-namespace
 
 - name: Add brew zsh as allowed shell
   become: true
