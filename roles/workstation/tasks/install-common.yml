@@ -21,3 +21,12 @@
     - neovim
     - flake8
     - pex
+
+- name: Install python3 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  with_items:
+    - isort
+    - neovim
+    - flake8
