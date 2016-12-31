@@ -20,3 +20,6 @@
 - include: keymap-macos.yml
   when: ansible_os_family == "Darwin"
   tags: [keymap]
+
+- include: python.yml
+  tags: [python, install]

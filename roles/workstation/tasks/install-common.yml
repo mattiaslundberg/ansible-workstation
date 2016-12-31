@@ -10,26 +10,3 @@
   npm:
     name: eslint
     global: yes
-
-- name: Install pip
-  easy_install:
-    name: pip
-
-- name: Install python packages
-  pip:
-    name: "{{ item }}"
-  with_items:
-    - virtualenvwrapper
-    - isort
-    - neovim
-    - flake8
-    - pex
-
-- name: Install python3 packages
-  pip:
-    name: "{{ item }}"
-    executable: pip3
-  with_items:
-    - isort
-    - neovim
-    - flake8

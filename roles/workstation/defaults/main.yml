@@ -1,0 +1,5 @@
+---
+pip_packages:
+  - isort
+  - neovim
+  - flake8
