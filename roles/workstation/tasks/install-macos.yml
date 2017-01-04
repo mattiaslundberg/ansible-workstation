@@ -1,7 +1,10 @@
 ---
 - name: Tap nvim
   homebrew_tap:
-    name: neovim/neovim
+    name: "{{ item }}"
+  with_items:
+    - universal-ctags/universal-ctags
+    - neovim/neovim
 
 - name: Install base packages
   homebrew:
@@ -25,6 +28,12 @@
     - hub
     - reattach-to-user-namespace
     - sshrc
+
+- name: Install ctags
+  homebrew:
+    install_options: HEAD
+    name: universal-ctags
+    state: linked
 
 - name: Add brew zsh as allowed shell
   become: true
