@@ -5,6 +5,7 @@
   with_items:
     - virtualenvwrapper
     - pex
+    - requests
 
 - name: Install python2 packages
   pip:
