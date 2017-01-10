@@ -39,7 +39,7 @@
   become: true
   template:
     src: templates/shells.j2
-    dest: /etc/shells 
+    dest: /etc/shells
 
 - name: Set loginshell
   shell: chsh -s /usr/local/bin/zsh

@@ -4,7 +4,6 @@
   pacman:
     name: "{{ item }}"
   with_items:
-    - mariadb
     - redis
     - memcached
     - neovim
