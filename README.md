@@ -25,13 +25,6 @@ ansible-playbook -i inventory site.yml -K
 
 # Manual steps
 
-## Get ctrl-h working in iterm2
-Edit -> Preferences -> Keys
-Press +
-Press Ctrl+h as Keyboard Shortcut
-Choose Send Escape Sequence as Action
-Type [104;5u for Esc+
-
 ## Seil (and system)
 Must set caps-lock to no-action in system settings
 Start seil and map caps-lock to delete
