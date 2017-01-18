@@ -32,7 +32,6 @@
     - .screenrc
     - .sshrc
     - .sshrc.d
-    - .tmux.conf
     - .vimsnippets
 
 - name: Create linux symlinks
@@ -61,6 +60,16 @@
     - openbox
     - tint2
   when: ansible_os_family == "Archlinux"
+
+- name: Remove old tmux.conf
+  file:
+    name: ~/.tmux.conf
+    state: absent
+
+- name: Install tmux.conf
+  template:
+    src: tmux.conf.j2
+    dest: ~/.tmux.conf
 
 - name: Install nvim-plug
   shell: nvim +qall! --headless
