@@ -2,11 +2,12 @@
 - name: Install gems
   gem:
     name: "{{ item }}"
+    state: "{{ packages_state }}"
   with_items:
-    - tmuxinator
     - ghi
 
 - name: Install eslint
   npm:
     name: eslint
     global: yes
+    stage: "{{ packages_state }}"

@@ -3,6 +3,7 @@
   become: true
   pacman:
     name: "{{ item }}"
+    state: "{{ packages_state }}"
   with_items:
     - redis
     - memcached

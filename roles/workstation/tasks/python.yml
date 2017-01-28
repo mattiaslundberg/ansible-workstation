@@ -2,6 +2,7 @@
 - name: Install python2 only packages
   pip:
     name: "{{ item }}"
+    state: "{{ packages_state }}"
   with_items:
     - virtualenvwrapper
     - pex
@@ -11,6 +12,7 @@
   pip:
     name: "{{ item }}"
     executable: pip
+    state: "{{ packages_state }}"
   with_items: "{{ pip_packages }}"
   when: ansible_os_family != "Archlinux"
 
@@ -18,6 +20,7 @@
   pip:
     name: "{{ item }}"
     executable: pip3
+    state: "{{ packages_state }}"
   with_items: "{{ pip_packages }}"
 
 - name: Setup virtualenvwrapper scripts

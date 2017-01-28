@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: false
+  vars:
+    - packages_state: latest
+
+  roles:
+   - role: workstation
+
+  tasks:
+    - name: Upgrade pacman packages
+      pacman:
+        upgrade: true
+      when: ansible_os_family == "Archlinux"
