@@ -20,7 +20,7 @@ pacman -S ansible
 
 # Run
 ```
-ansible-playbook -i inventory site.yml -K
+ansible-playbook install.yml
 ```
 
 # Manual steps
