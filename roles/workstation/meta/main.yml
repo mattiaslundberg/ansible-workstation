@@ -1,4 +1,21 @@
 ---
 dependencies:
   - role: aur
+    package_name: chkboot
+  - role: aur
     package_name: entr
+  # TODO: Figure out why editorconfig is failing to clone
+  # - role: aur
+  #   package_name: editor-config-c
+  - role: aur
+    package_name: shutter
+  - role: aur
+    package_name: spotify
+  - role: aur
+    package_name: tmuxinator
+  - role: aur
+    package_name: yarn
+  - role: aur
+    package_name: vagrant-libvirt
+  - role: aur
+    package_name: sshrc-git

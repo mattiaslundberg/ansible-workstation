@@ -1,4 +1,10 @@
 ---
+- name: Install general AUR deps
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - base-devel
+
 - name: Install AUR packages
   include: install.yml
   when: ansible_os_family == "Archlinux"

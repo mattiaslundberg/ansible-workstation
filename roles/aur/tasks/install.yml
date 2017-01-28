@@ -1,10 +1,4 @@
 ---
-- name: Install general AUR deps
-  pacman:
-    name: "{{ item }}"
-  with_items:
-    - base-devel
-
 - name: Create folder for cloning {{ package_name }}
   become: true
   file:
@@ -17,33 +11,28 @@
     repo: https://aur.archlinux.org/{{ package_name }}.git
     dest: /usr/local/share/aur/{{ package_name }}
 
-- name: Get last revision
+- name: Get last revision {{ package_name }}
   command: cat last_revision.txt
   args:
     chdir: /usr/local/share/aur/{{ package_name }}
   ignore_errors: yes
   register: last_revision
 
-- name: Get new revision
+- name: Get new revision {{ package_name }}
   command: git rev-parse @
   args:
     chdir: /usr/local/share/aur/{{ package_name }}
   register: new_revision
 
-- name: print
-  debug:
-    msg: "{{ last_revision.stdout }} {{ new_revision.stdout }}"
-
 # TODO overwrite parts of package if template/custom thing
 
-- name: Build and install the package
+- name: Build and install the package {{ package_name }}
   command: makepkg -si
   args:
     chdir: /usr/local/share/aur/{{ package_name }}
   when: last_revision.stdout != new_revision.stdout
 
-- name: Write last revision to file
+- name: Write last revision to file {{ package_name }}
   copy:
     dest: /usr/local/share/aur/{{ package_name }}/last_revision.txt
     content: "{{ new_revision.stdout }}"
-
