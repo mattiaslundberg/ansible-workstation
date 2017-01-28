@@ -1,0 +1,5 @@
+---
+- name: Add custom config.h
+  template:
+    src: st.config.h.j2
+    dest: /usr/local/share/aur/st/config.h

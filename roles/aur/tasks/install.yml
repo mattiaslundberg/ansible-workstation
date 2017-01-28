@@ -24,7 +24,12 @@
     chdir: /usr/local/share/aur/{{ package_name }}
   register: new_revision
 
-# TODO overwrite parts of package if template/custom thing
+- name: Run custom steps for {{ package_name }}
+  include: "{{ item }}"
+  with_first_found:
+    - files:
+      - package-{{ package_name }}.yml
+      skip: true
 
 - name: Build and install the package {{ package_name }}
   command: makepkg -si

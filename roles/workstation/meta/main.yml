@@ -19,4 +19,5 @@ dependencies:
     package_name: vagrant-libvirt
   - role: aur
     package_name: sshrc-git
-  # TODO: Install st-terminal (with custom config)
+  - role: aur
+    package_name: st
