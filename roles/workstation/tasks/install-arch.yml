@@ -9,7 +9,6 @@
     - neovim
     - tmux
     - nodejs
-    - editorconfig-core-c
     - cmake
     - python2
     - python3
