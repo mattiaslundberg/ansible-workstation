@@ -10,6 +10,7 @@
   git:
     repo: https://aur.archlinux.org/{{ package_name }}.git
     dest: /usr/local/share/aur/{{ package_name }}
+    force: yes
 
 - name: Get last revision {{ package_name }}
   command: cat last_revision.txt
