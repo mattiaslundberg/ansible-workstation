@@ -12,3 +12,8 @@
       pacman:
         upgrade: true
       when: ansible_os_family == "Archlinux"
+
+    - name: Upgrade brew packages
+      homebrew:
+        update_homebrew: yes
+        upgrade_all: yes

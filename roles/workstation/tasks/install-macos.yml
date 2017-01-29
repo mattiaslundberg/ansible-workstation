@@ -77,6 +77,6 @@
 - name: Install gems
   gem:
     name: "{{ item }}"
-    stage: "{{ packages_state }}"
+    state: "{{ packages_state }}"
   with_items:
     - tmuxinator

@@ -10,4 +10,4 @@
   npm:
     name: eslint
     global: yes
-    stage: "{{ packages_state }}"
+    state: "{{ packages_state }}"
