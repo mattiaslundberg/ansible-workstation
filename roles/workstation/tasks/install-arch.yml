@@ -5,6 +5,7 @@
     name: "{{ item }}"
     state: "{{ packages_state }}"
   with_items:
+    - mariadb
     - redis
     - memcached
     - neovim
@@ -18,3 +19,6 @@
     - zsh
     - git
     - openbox
+    - firefox
+    - chromium
+    - zeal
