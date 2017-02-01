@@ -29,6 +29,7 @@
     - hub
     - reattach-to-user-namespace
     - sshrc
+    - fzf
 
 - name: Install ctags
   homebrew:
