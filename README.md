@@ -25,19 +25,18 @@ ansible-playbook install.yml
 
 # Manual steps
 
-## Seil (and system)
+## Karabiner (and system)
 Must set caps-lock to no-action in system settings
-Start seil and map caps-lock to delete
 
-## Karabiner
 Enable the following items:
-1. Don't remap external keyboards
-2. Command_R to Option_R
-3. Option_R to Control_R
+
+1. Command_R to Option_R (For internal keyboard only)
+2. Option_R to Control_R (For internal keyboard only)
+3. Caps-lock to backspace_or_delete
 
 ## BetterTouchTool
 Add the following keyboard rules
 1. C-A-l lock screen
-2. C-Cmd-=> Maximize window right
-3. C-Cmd-<= Maximize window left
-4. C-Cmd-Up Maximize window
+2. C-A-=> Maximize window right
+3. C-A-<= Maximize window left
+4. C-A-Up Maximize window
