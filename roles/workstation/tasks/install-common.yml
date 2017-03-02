@@ -1,11 +1,4 @@
 ---
-- name: Install gems
-  gem:
-    name: "{{ item }}"
-    state: "{{ packages_state }}"
-  with_items:
-    - ghi
-
 - name: Install eslint
   npm:
     name: eslint
