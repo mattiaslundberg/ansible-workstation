@@ -4,7 +4,7 @@
   file:
     state: directory
     path: /usr/local/share/aur/
-    owner: mattias
+    owner: "{{ ansible_user_id }}"
 
 - name: Clone/update repo {{ package_name }}
   git:
@@ -30,6 +30,8 @@
   args:
     chdir: /usr/local/share/aur/{{ package_name }}
   when: last_revision.stdout != new_revision.stdout
+  environment:
+    PATH: "{{ ansible_env.PATH }}:/usr/bin/core_perl/"
 
 - name: Install the package {{ package_name }}
   become: yes

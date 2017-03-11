@@ -12,6 +12,7 @@
     - neovim
     - tmux
     - nodejs
+    - npm
     - cmake
     - python2
     - python3
