@@ -9,7 +9,8 @@ All OSes requires an ssh key setup and working with github
 ## macos
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install ansible
+
+brew install ansible python
 ```
 
 ## Arch Linux
