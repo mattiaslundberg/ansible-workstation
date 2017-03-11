@@ -1,10 +1,11 @@
 ---
-- name: Tap nvim
+- name: Tap extra casks
   homebrew_tap:
     name: "{{ item }}"
   with_items:
     - universal-ctags/universal-ctags
     - neovim/neovim
+    - caskroom/cask
 
 - name: Install base packages
   homebrew:
@@ -47,11 +48,7 @@
   become: true
   shell: chsh -s /usr/local/bin/zsh
 
-- name: Tap cask
-  homebrew_tap:
-    name: caskroom/cask
-
-- name: Install Graphical packages
+- name: Install cask packages
   homebrew_cask:
     name: "{{ item }}"
   with_items:
@@ -68,6 +65,7 @@
     - iterm2
     - java
     - thunderbird
+    - font-source-code-pro
     - spotify
 
 - name: Install pip
