@@ -4,6 +4,7 @@
     dest: ~/.dotfiles
     repo: "git@github.com:mattiaslundberg/dotfiles.git"
     recursive: yes
+    update: no
 
 - name: Create config folders
   file:
