@@ -1,4 +1,7 @@
 ---
+- name: Fetch gpg key
+  command: gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
+
 - name: Install general AUR deps
   pacman:
     name: "{{ item }}"
@@ -6,6 +9,8 @@
   tags: [install, aur]
   with_items:
     - base-devel
+    - expac
+    - git
 
 - name: Install AUR packages
   include: install.yml

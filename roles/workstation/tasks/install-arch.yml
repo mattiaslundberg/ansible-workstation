@@ -24,3 +24,15 @@
     - chromium
     - zeal
     - fzf
+
+- name: Install AUR packages
+  command: "pacaur -S --noconfirm --noedit {{ item }}"
+  with_items:
+    - chkboot
+    - entr
+    - shutter
+    - spotify
+    - yarn
+    - vagrant-libvirt
+    - sshrc-git
+    - editor-config-c

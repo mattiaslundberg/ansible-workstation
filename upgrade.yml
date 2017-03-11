@@ -13,6 +13,10 @@
         upgrade: true
       when: ansible_os_family == "Archlinux"
 
+    - name: Upgrade aur packages
+      command: pacaur --noedit --noconfirm -Syu
+      when: ansible_os_family == "Archlinux"
+
     - name: Upgrade brew packages
       homebrew:
         update_homebrew: yes
