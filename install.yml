@@ -8,6 +8,12 @@
    - role: workstation
 
   pre_tasks:
+    - name: Upgrade pacman packages
+      pacman:
+        upgrade: true
+        update_cache: yes
+      when: ansible_os_family == "Archlinux"
+
     - name: Set python for MacOS
       set_fact:
         ansible_python_interpreter: /usr/local/bin/python

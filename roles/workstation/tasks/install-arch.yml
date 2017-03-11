@@ -27,6 +27,7 @@
     - fzf
     - adobe-source-code-pro-fonts
     - mate-terminal
+  tags: [install]
 
 - name: Install AUR packages
   command: "pacaur -S --noconfirm --noedit {{ item }}"
@@ -39,3 +40,4 @@
     - vagrant-libvirt
     - sshrc-git
     - editorconfig-core-c
+  tags: [install, aur]

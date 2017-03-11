@@ -11,6 +11,7 @@
     - name: Upgrade pacman packages
       pacman:
         upgrade: true
+        update_cache: yes
       when: ansible_os_family == "Archlinux"
 
     - name: Upgrade aur packages

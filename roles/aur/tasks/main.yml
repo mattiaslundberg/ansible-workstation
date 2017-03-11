@@ -6,6 +6,7 @@
 - name: Install general AUR deps
   pacman:
     name: "{{ item }}"
+    state: "{{ packages_state }}"
   become: yes
   when: ansible_os_family == "Archlinux"
   tags: [install, aur]
