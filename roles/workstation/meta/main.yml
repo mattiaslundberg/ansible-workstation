@@ -3,6 +3,4 @@ dependencies:
   - role: aur
     package_name: cower
   - role: aur
-    package_name: st
-  - role: aur
     package_name: pacaur

@@ -25,6 +25,7 @@
     - zeal
     - fzf
     - adobe-source-code-pro-fonts
+    - mate-terminal
 
 - name: Install AUR packages
   command: "pacaur -S --noconfirm --noedit {{ item }}"
