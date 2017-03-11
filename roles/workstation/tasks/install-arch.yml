@@ -38,4 +38,4 @@
     - yarn
     - vagrant-libvirt
     - sshrc-git
-    - editor-config-c
+    - editorconfig-core-c
