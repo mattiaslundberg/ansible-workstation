@@ -1,26 +1,30 @@
 ---
-- name: Install python2 only packages
+- name: Install main python only packages
+  become: yes
   pip:
     name: "{{ item }}"
     state: "{{ packages_state }}"
+  tags: [python]
   with_items:
     - virtualenvwrapper
     - pex
     - requests
 
 - name: Install python2 packages
+  become: yes
   pip:
     name: "{{ item }}"
     executable: pip
     state: "{{ packages_state }}"
+  tags: [python]
   with_items: "{{ pip_packages }}"
-  when: ansible_os_family != "Archlinux"
 
 - name: Install python3 packages
   pip:
     name: "{{ item }}"
     executable: pip3
     state: "{{ packages_state }}"
+  tags: [python]
   with_items: "{{ pip_packages }}"
 
 - name: Setup virtualenvwrapper scripts
@@ -28,5 +32,6 @@
     src: templates/{{ item }}.j2
     dest: ~/.virtualenvs/{{ item }}
     mode: o=rwx,g=rx
+  tags: [python]
   with_items:
     - postmkvirtualenv
