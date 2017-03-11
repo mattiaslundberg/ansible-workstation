@@ -12,8 +12,6 @@ dependencies:
   - role: aur
     package_name: spotify
   - role: aur
-    package_name: tmuxinator
-  - role: aur
     package_name: yarn
   - role: aur
     package_name: vagrant-libvirt

@@ -4,3 +4,10 @@
     name: eslint
     global: yes
     state: "{{ packages_state }}"
+
+- name: Install gems
+  gem:
+    name: "{{ item }}"
+    state: "{{ packages_state }}"
+  with_items:
+    - tmuxinator
