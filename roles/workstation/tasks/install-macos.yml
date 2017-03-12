@@ -6,6 +6,7 @@
     - universal-ctags/universal-ctags
     - neovim/neovim
     - caskroom/cask
+    - caskroom/fonts
 
 - name: Install gem dependency for ghi
   gem:
