@@ -7,6 +7,10 @@
     - neovim/neovim
     - caskroom/cask
 
+- name: Install gem dependency for ghi
+  gem:
+    name: pygments.rb
+
 - name: Install base packages
   homebrew:
     name: "{{ item }}"
