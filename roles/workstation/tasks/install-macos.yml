@@ -42,9 +42,16 @@
   homebrew:
     install_options: HEAD
     name: universal-ctags
+    state: present
+
+- name: Link ctags
+  homebrew:
+    install_options: HEAD
+    name: universal-ctags
     state: linked
 
 - name: Add brew zsh as allowed shell
+  become: yes
   template:
     src: templates/shells.j2
     dest: /etc/shells
@@ -74,6 +81,7 @@
     - spotify
 
 - name: Install pip
+  become: yes
   easy_install:
     name: pip
     state: "{{ packages_state }}"
