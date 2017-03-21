@@ -37,6 +37,8 @@
     - sshrc
     - fzf
     - ghi
+    - pyenv
+    - pyenv-virtualenv
 
 - name: Install ctags
   homebrew:

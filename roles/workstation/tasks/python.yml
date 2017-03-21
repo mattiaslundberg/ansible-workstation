@@ -6,7 +6,6 @@
     state: "{{ packages_state }}"
   tags: [python]
   with_items:
-    - virtualenvwrapper
     - pex
     - requests
 
@@ -26,12 +25,3 @@
     state: "{{ packages_state }}"
   tags: [python]
   with_items: "{{ pip_packages }}"
-
-- name: Setup virtualenvwrapper scripts
-  template:
-    src: templates/{{ item }}.j2
-    dest: ~/.virtualenvs/{{ item }}
-    mode: o=rwx,g=rx
-  tags: [python]
-  with_items:
-    - postmkvirtualenv

@@ -40,4 +40,6 @@
     - vagrant-libvirt
     - sshrc-git
     - editorconfig-core-c
+    - pyenv
+    - pyenv-virtualenv
   tags: [install, aur]
