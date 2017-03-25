@@ -9,8 +9,8 @@
 
   pre_tasks:
     - name: Upgrade pacman packages
+      become: yes
       pacman:
-        upgrade: true
         update_cache: yes
       when: ansible_os_family == "Archlinux"
 
