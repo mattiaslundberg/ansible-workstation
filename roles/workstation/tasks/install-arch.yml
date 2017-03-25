@@ -42,4 +42,5 @@
     - editorconfig-core-c
     - pyenv
     - pyenv-virtualenv
+    - git-extras
   tags: [install, aur]
