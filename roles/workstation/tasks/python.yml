@@ -23,7 +23,7 @@
 - name: Install nvim2 packages
   pip:
     name: "{{ item }}"
-    virtualenv_python: ~/.pyenv/versions/neovim2/bin/python
+    virtualenv: ~/.pyenv/versions/neovim2
     state: "{{ packages_state }}"
   tags: [python]
   with_items: "{{ neovim_python_packages }}"
@@ -31,7 +31,7 @@
 - name: Install nvim3 packages
   pip:
     name: "{{ item }}"
-    virtualenv_python: ~/.pyenv/versions/neovim3/bin/python
+    virtualenv: ~/.pyenv/versions/neovim3
     state: "{{ packages_state }}"
   tags: [python]
   with_items: "{{ neovim_python_packages }}"
