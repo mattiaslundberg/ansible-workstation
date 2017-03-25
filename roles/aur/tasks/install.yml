@@ -27,6 +27,7 @@
 
 - name: Build the package {{ package_name }}
   command: makepkg -s
+  ignore_errors: yes
   args:
     chdir: /usr/local/share/aur/{{ package_name }}
   when: last_revision.stdout != new_revision.stdout
@@ -35,7 +36,7 @@
 
 - name: Install the package {{ package_name }}
   become: yes
-  shell: pacman --noconfirm -U /usr/local/share/aur/{{ package_name }}/*.pkg.tar.xz
+  shell: pacman --needed --noconfirm -U /usr/local/share/aur/{{ package_name }}/*.pkg.tar.xz
 
 - name: Write last revision to file {{ package_name }}
   copy:
