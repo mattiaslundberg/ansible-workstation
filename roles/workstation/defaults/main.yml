@@ -1,5 +1,13 @@
 ---
-pip_packages:
+neovim_python_packages:
   - isort
   - neovim
   - flake8
+
+pyenv_versions:
+  - 2.7.13
+  - 3.6.0
+
+default_python_2: 2.7.13
+
+default_python_3: 3.6.0
