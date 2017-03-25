@@ -29,16 +29,17 @@
     - entr
     - python
     - python3
+    - pyenv
+    - pyenv-virtualenv
     - the_silver_searcher
     - zsh
     - git
+    - git-extras
     - hub
+    - ghi
     - reattach-to-user-namespace
     - sshrc
     - fzf
-    - ghi
-    - pyenv
-    - pyenv-virtualenv
 
 - name: Install ctags
   homebrew:
