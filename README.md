@@ -37,6 +37,7 @@ Enable the following items:
 
 ## BetterTouchTool
 Add the following keyboard rules
+
 1. C-A-l lock screen
 2. C-A-=> Maximize window right
 3. C-A-<= Maximize window left

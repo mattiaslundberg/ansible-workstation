@@ -42,4 +42,6 @@
     - editorconfig-core-c
     - pyenv
     - pyenv-virtualenv
+    - git-extras
+    - tmuxinator
   tags: [install, aur]

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: false
+  vars:
+    - packages_state: present
+
+  roles:
+    - role: aur
+      package_name: cower
