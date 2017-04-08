@@ -7,6 +7,13 @@
     accept_hostkey: yes
     update: no
 
+- name: Clone spacemacs repo
+  git:
+    dest: ~/.emacs.d
+    repo: "git@github.com:syl20bnr/spacemacs.git"
+    accept_hostkey: yes
+    update: no
+
 - name: Create config folders
   file:
     state: directory
@@ -35,6 +42,7 @@
     - .sshrc
     - .sshrc.d
     - .vimsnippets
+    - .spacemacs
 
 - name: Create linux symlinks
   file:

@@ -40,6 +40,11 @@
     - pyenv
     - pyenv-virtualenv
 
+- name: Install emacs
+  homebrew:
+    name: emacs
+    install_options: "--with-cocoa"
+
 - name: Install ctags
   homebrew:
     install_options: HEAD
@@ -79,8 +84,14 @@
     - iterm2
     - java
     - thunderbird
-    - font-source-code-pro
     - spotify
+
+- name: Install font packages
+  homebrew_cask:
+    name: "{{ item }}"
+    install_options: "--fontdir=/Library/Fonts"
+  with_items:
+    - font-source-code-pro
 
 - name: Install pip
   become: yes
