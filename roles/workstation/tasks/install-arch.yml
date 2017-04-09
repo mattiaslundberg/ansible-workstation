@@ -18,6 +18,7 @@
     - python3
     - python-pip
     - the_silver_searcher
+    - emacs
     - zsh
     - git
     - openbox
