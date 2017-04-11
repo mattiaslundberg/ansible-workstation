@@ -1,9 +1,17 @@
 ---
-- name: Install eslint
+- name: Install node packages
   npm:
-    name: eslint
+    name: "{{ item }}"
     global: yes
     state: "{{ packages_state }}"
   become: yes
   environment:
     PATH: "{{ ansible_env.PATH }}:/usr/local/bin/"
+  tags: [npm]
+  with_items:
+    - eslint
+    - elm
+    - elm-test
+    - elm-oracle
+    - elm-format
+    - js-beautify
