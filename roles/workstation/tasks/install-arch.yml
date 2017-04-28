@@ -28,6 +28,7 @@
     - fzf
     - adobe-source-code-pro-fonts
     - mate-terminal
+    - emacs
   tags: [install]
 
 - name: Install AUR packages
