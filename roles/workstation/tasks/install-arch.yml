@@ -46,5 +46,4 @@
     - pyenv-virtualenv
     - git-extras
     - tmuxinator
-    - nodejs-tern
   tags: [install, aur]

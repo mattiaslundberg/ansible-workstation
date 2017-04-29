@@ -14,4 +14,5 @@
     - elm-test
     - elm-oracle
     - elm-format
+    - tern
     - js-beautify
