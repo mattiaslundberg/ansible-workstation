@@ -75,6 +75,7 @@
   template:
     src: tmux.conf.j2
     dest: ~/.tmux.conf
+  tags: [tmux]
 
 - name: Install nvim-plug
   shell: nvim +qall! --headless
