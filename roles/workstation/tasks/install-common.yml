@@ -16,3 +16,23 @@
     - elm-format
     - tern
     - js-beautify
+
+- name: Install asdf
+  git:
+    dest: ~/.asdf
+    repo: "git@github.com:asdf-vm/asdf.git"
+    recursive: yes
+    accept_hostkey: yes
+    update: no
+    version: v0.3.0
+  tags: [asdf]
+
+- name: Install asdf plugins
+  command: "~/.asdf/bin/asdf plugin-add {{ item.name }} {{ item.repo }}"
+  args:
+    creates: "~/.asdf/plugins/{{ item.name }}"
+  tags: [asdf]
+  with_items:
+    - {"name": "elixir", "repo": "https://github.com/asdf-vm/asdf-elixir.git"}
+    - {"name": "erlang", "repo": "https://github.com/asdf-vm/asdf-erlang.git"}
+    - {"name": "nodejs", "repo": "https://github.com/asdf-vm/asdf-nodejs.git"}
