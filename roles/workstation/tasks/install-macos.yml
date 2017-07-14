@@ -17,6 +17,7 @@
     name: "{{ item }}"
     state: "{{ packages_state }}"
   with_items:
+    - docker
     - neovim
     - tmux
     - node
