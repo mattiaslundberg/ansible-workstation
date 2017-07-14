@@ -17,9 +17,6 @@
     name: "{{ item }}"
     state: "{{ packages_state }}"
   with_items:
-    - mysql
-    - redis
-    - memcached
     - neovim
     - tmux
     - node
@@ -82,7 +79,6 @@
     - virtualbox
     - sublime-text
     - iterm2
-    - java
     - thunderbird
     - spotify
 

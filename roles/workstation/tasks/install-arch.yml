@@ -6,9 +6,6 @@
     state: "{{ packages_state }}"
     upgrade: yes
   with_items:
-    - mariadb
-    - redis
-    - memcached
     - neovim
     - tmux
     - nodejs
