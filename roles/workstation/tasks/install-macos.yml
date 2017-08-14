@@ -7,6 +7,7 @@
     - neovim/neovim
     - caskroom/cask
     - caskroom/fonts
+    - d12frosted/emacs-plus
 
 - name: Install gem dependency for ghi
   gem:
@@ -38,11 +39,12 @@
     - reattach-to-user-namespace
     - sshrc
     - fzf
+    - emacs-plus
 
-- name: Install emacs
+- name: Link emacs
   homebrew:
-    name: emacs
-    install_options: "--with-cocoa"
+    name: emacs-plus
+    state: linked
 
 - name: Install ctags
   homebrew:
