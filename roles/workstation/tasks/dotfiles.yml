@@ -43,6 +43,7 @@
     - .sshrc.d
     - .vimsnippets
     - .spacemacs
+    - .spacemacs.d
 
 - name: Create linux symlinks
   file:
