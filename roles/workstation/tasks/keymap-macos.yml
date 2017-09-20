@@ -4,3 +4,4 @@
   copy:
     dest: /Library/Keyboard Layouts/Custom Layout.bundle/
     src: roles/workstation/files/keymap/
+  tags: [keyboard]
