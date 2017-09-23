@@ -5,33 +5,3 @@
     creates: ~/.pyenv/versions/{{ item }}
   tags: [python]
   with_items: "{{ pyenv_versions }}"
-
-- name: Create nvim2 pyenv
-  command: pyenv virtualenv {{ default_python_2 }} neovim2
-  args:
-    creates: ~/.pyenv/versions/neovim2
-  tags: [python]
-  ignore_errors: yes
-
-- name: Create nvim3 pyenv
-  command: pyenv virtualenv {{ default_python_3 }} neovim3
-  args:
-    creates: ~/.pyenv/versions/neovim3
-  tags: [python]
-  ignore_errors: yes
-
-- name: Install nvim2 packages
-  pip:
-    name: "{{ item }}"
-    virtualenv: ~/.pyenv/versions/neovim2
-    state: "{{ packages_state }}"
-  tags: [python]
-  with_items: "{{ neovim_python_packages }}"
-
-- name: Install nvim3 packages
-  pip:
-    name: "{{ item }}"
-    virtualenv: ~/.pyenv/versions/neovim3
-    state: "{{ packages_state }}"
-  tags: [python]
-  with_items: "{{ neovim_python_packages }}"
