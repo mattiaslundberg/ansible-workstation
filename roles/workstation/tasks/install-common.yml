@@ -10,10 +10,6 @@
   tags: [npm]
   with_items:
     - eslint
-    - elm
-    - elm-test
-    - elm-oracle
-    - elm-format
     - tern
     - js-beautify
 
