@@ -14,7 +14,6 @@
     - cmake
     - python2
     - python3
-    - python-pip
     - the_silver_searcher
     - emacs
     - zsh

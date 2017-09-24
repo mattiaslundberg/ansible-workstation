@@ -92,12 +92,6 @@
   with_items:
     - font-source-code-pro
 
-- name: Install pip
-  become: yes
-  easy_install:
-    name: pip
-    state: "{{ packages_state }}"
-
 - name: Install gems
   gem:
     name: "{{ item }}"
