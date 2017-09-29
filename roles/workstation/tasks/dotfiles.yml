@@ -33,7 +33,6 @@
     - .zsh
     - .zprofile
     - .zshrc
-    - .colormap
     - .ctags
     - .gitignore_global
     - .hgrc
