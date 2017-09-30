@@ -17,6 +17,6 @@
     - git
 
 - name: Install AUR packages
-  include: install.yml
+  import_tasks: install.yml
   when: ansible_os_family == "Archlinux"
   tags: [install, aur]

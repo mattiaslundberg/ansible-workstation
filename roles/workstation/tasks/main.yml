@@ -1,25 +1,27 @@
 ---
 - name: Install macOS packages
-  include: install-macos.yml
+  import_tasks: install-macos.yml
   when: ansible_os_family == "Darwin"
   tags: [install]
 
 - name: Install Arch linux packages
-  include: install-arch.yml
+  import_tasks: install-arch.yml
   when: ansible_os_family == "Archlinux"
   tags: [install]
 
 - name: Install system independent packages
-  include: install-common.yml
+  import_tasks: install-common.yml
   tags: [install]
 
 - name: Add dotfiles
-  include: dotfiles.yml
+  import_tasks: dotfiles.yml
   tags: [dotfiles]
 
-- include: keymap-macos.yml
+- name: Setup keyboard on macos
+  import_tasks: keymap-macos.yml
   when: ansible_os_family == "Darwin"
   tags: [keymap]
 
-- include: python.yml
+- name: Setup python
+  import_tasks: python.yml
   tags: [python, install]
