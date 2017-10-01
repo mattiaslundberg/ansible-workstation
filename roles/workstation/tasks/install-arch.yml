@@ -15,6 +15,7 @@
     - python2
     - python3
     - the_silver_searcher
+    - ripgrep
     - emacs
     - zsh
     - git
