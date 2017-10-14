@@ -1,7 +1,0 @@
----
-- name: Install python versions
-  command: pyenv install {{ item }} -s
-  args:
-    creates: ~/.pyenv/versions/{{ item }}
-  tags: [python]
-  with_items: "{{ pyenv_versions }}"

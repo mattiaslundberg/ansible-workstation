@@ -99,3 +99,10 @@
   become: yes
   with_items:
     - tmuxinator
+
+- name: Install python versions
+  shell: CFLAGS="-I$(brew --prefix openssl)/include" LDFLAGS="-L$(brew --prefix openssl)/lib" pyenv install {{ item }} -s
+  args:
+    creates: ~/.pyenv/versions/{{ item }}
+  with_items: "{{ pyenv_versions }}"
+  tags: [python, install]
