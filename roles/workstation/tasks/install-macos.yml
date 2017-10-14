@@ -88,7 +88,7 @@
 - name: Install font packages
   homebrew_cask:
     name: "{{ item }}"
-    install_options: "--fontdir=/Library/Fonts"
+    install_options: "fontdir=/Library/Fonts"
   with_items:
     - font-source-code-pro
 
