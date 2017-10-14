@@ -21,7 +21,3 @@
   import_tasks: keymap-macos.yml
   when: ansible_os_family == "Darwin"
   tags: [keymap]
-
-- name: Setup python
-  import_tasks: python.yml
-  tags: [python, install]
