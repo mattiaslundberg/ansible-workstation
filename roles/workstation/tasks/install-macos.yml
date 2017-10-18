@@ -36,6 +36,9 @@
     - git-extras
     - hub
     - ghi
+    - jq
+    - pv
+    - ripgrep
     - reattach-to-user-namespace
     - sshrc
     - fzf
