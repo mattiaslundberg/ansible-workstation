@@ -39,7 +39,6 @@
     - jq
     - pv
     - ripgrep
-    - reattach-to-user-namespace
     - sshrc
     - fzf
     - emacs-plus
