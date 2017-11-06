@@ -21,8 +21,6 @@
     - docker
     - neovim
     - tmux
-    - node
-    - yarn
     - editorconfig
     - cmake
     - entr

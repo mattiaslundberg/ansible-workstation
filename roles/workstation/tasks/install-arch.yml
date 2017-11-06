@@ -9,8 +9,6 @@
     - docker
     - neovim
     - tmux
-    - nodejs
-    - npm
     - cmake
     - python2
     - python3
@@ -36,7 +34,6 @@
     - entr
     - shutter
     - spotify
-    - yarn
     - vagrant-libvirt
     - sshrc-git
     - editorconfig-core-c
