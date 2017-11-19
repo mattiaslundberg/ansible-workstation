@@ -86,3 +86,9 @@
 - name: Install nvim plugins
   shell: nvim +PlugInstall! +qall! --headless
   tags: [vim]
+
+- name: Create iex history (otherwise it won't be saved)
+  file:
+    state: touch
+    path: ~/.iex_history
+  tags: [iex]
