@@ -46,6 +46,11 @@
     name: emacs-plus
     state: linked
 
+- name: Install asdf deps
+  homebrew:
+    name: wxmac
+    state: "{{ packages_state }}"
+
 - name: Install ctags
   homebrew:
     install_options: HEAD
