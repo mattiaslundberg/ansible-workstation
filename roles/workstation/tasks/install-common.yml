@@ -23,15 +23,15 @@
   tags: [asdf]
 
 - name: Install asdf plugins
-  command: "~/.asdf/bin/asdf plugin-add {{ item.name }} {{ item.repo }}"
+  command: "~/.asdf/bin/asdf plugin-add {{ item }}"
   args:
-    creates: "~/.asdf/plugins/{{ item.name }}"
+    creates: "~/.asdf/plugins/{{ item }}"
   tags: [asdf]
   with_items:
-    - {"name": "elixir", "repo": "https://github.com/asdf-vm/asdf-elixir.git"}
-    - {"name": "erlang", "repo": "https://github.com/asdf-vm/asdf-erlang.git"}
-    - {"name": "nodejs", "repo": "https://github.com/asdf-vm/asdf-nodejs.git"}
-    - {"name": "elm", "repo": "https://github.com/vic/asdf-elm.git"}
+    - elixir
+    - erlang
+    - nodejs
+    - elm
 
 - name: Install pipsi
   shell: "pyenv shell 2.7.14 && curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python"
