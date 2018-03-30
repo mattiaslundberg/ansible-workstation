@@ -8,7 +8,7 @@
   with_items:
     - autojump
     - docker
-    - neovim
+    - vim
     - tmux
     - cmake
     - python2
