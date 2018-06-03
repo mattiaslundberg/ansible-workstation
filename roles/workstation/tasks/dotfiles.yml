@@ -27,6 +27,7 @@
     src: "~/.dotfiles/{{ item }}"
     dest: "~/{{ item }}"
   with_items:
+    - .editorconfig
     - .aliases
     - .bashrc
     - bin
