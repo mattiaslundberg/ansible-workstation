@@ -38,6 +38,7 @@
     - sshrc
     - fzf
     - emacs-plus
+    - antigen
 
 - name: Link emacs
   homebrew:

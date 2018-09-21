@@ -34,6 +34,7 @@
     - chkboot
     - entr
     - shutter
+    - antigen-git
     - spotify
     - vagrant-libvirt
     - sshrc-git
