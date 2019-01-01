@@ -35,14 +35,14 @@
     - entr
     - shutter
     - antigen-git
-    - spotify
-    - vagrant-libvirt
     - sshrc-git
     - editorconfig-core-c
     - pyenv
     - pyenv-virtualenv
     - git-extras
     - tmuxinator
+    - zsh-pure-prompt
+    - antigen-git
   tags: [install, aur]
 
 - name: Install python versions
