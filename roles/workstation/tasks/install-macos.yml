@@ -47,7 +47,7 @@
     name: emacs-plus
     state: linked
 
-- name: Install asdf deps
+- name: Install asdf-erlang deps
   homebrew:
     name: wxmac
     state: "{{ packages_state }}"
