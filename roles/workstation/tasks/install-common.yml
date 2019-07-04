@@ -13,17 +13,8 @@
     - tern
     - js-beautify
 
-- name: Install asdf
-  git:
-    dest: ~/.asdf
-    repo: "git@github.com:asdf-vm/asdf.git"
-    recursive: yes
-    accept_hostkey: yes
-    update: no
-  tags: [asdf]
-
 - name: Install asdf plugins
-  command: "~/.asdf/bin/asdf plugin-add {{ item }}"
+  command: "asdf plugin-add {{ item }}"
   args:
     creates: "~/.asdf/plugins/{{ item }}"
   tags: [asdf]
@@ -32,6 +23,10 @@
     - erlang
     - nodejs
     - elm
+
+- name: Fix asdf-nodejs installation
+  command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  tags: [asdf]
 
 - name: Install pipsi
   shell: "pyenv shell 2.7.14 && curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python"
