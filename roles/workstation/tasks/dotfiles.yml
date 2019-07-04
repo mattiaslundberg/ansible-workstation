@@ -77,16 +77,6 @@
     dest: ~/.tmux.conf
   tags: [tmux]
 
-- name: Install nvim-plug
-  shell: nvim +qall! --headless
-  args:
-    creates: ~/.config/nvim/autoload/plug.vim
-  tags: [vim]
-
-- name: Install nvim plugins
-  shell: nvim +PlugInstall! +qall! --headless
-  tags: [vim]
-
 - name: Create iex history (otherwise it won't be saved)
   file:
     state: touch
