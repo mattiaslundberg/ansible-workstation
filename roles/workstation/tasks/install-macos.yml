@@ -15,32 +15,31 @@
 
 - name: Install base packages
   homebrew:
-    name: "{{ item }}"
     state: "{{ packages_state }}"
-  with_items:
-    - autojump
-    - tmux
-    - editorconfig
-    - cmake
-    - entr
-    - python
-    - python3
-    - pyenv
-    - pyenv-virtualenv
-    - the_silver_searcher
-    - zsh
-    - git
-    - git-extras
-    - hub
-    - ghi
-    - jq
-    - pv
-    - ripgrep
-    - sshrc
-    - fzf
-    - emacs-plus
-    - antigen
-    - asdf
+    name:
+      - autojump
+      - tmux
+      - editorconfig
+      - cmake
+      - entr
+      - python
+      - python3
+      - pyenv
+      - pyenv-virtualenv
+      - the_silver_searcher
+      - zsh
+      - git
+      - git-extras
+      - hub
+      - ghi
+      - jq
+      - pv
+      - ripgrep
+      - sshrc
+      - fzf
+      - emacs-plus
+      - antigen
+      - asdf
 
 - name: Link emacs
   homebrew:
