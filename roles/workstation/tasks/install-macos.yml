@@ -59,13 +59,6 @@
     state: present
   tags: [ctags]
 
-- name: Link ctags
-  homebrew:
-    install_options: HEAD
-    name: universal-ctags
-    state: linked
-  tags: [ctags]
-
 - name: Add brew zsh as allowed shell
   become: yes
   template:
