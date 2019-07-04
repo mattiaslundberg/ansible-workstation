@@ -92,6 +92,7 @@
     - iterm2
     - thunderbird
     - spotify
+    - bitwarden
 
 - name: Install font packages
   homebrew_cask:
