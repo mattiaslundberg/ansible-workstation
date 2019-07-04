@@ -40,6 +40,7 @@
     - fzf
     - emacs-plus
     - antigen
+    - asdf
 
 - name: Link emacs
   homebrew:
