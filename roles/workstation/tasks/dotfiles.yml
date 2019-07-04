@@ -34,7 +34,6 @@
     - .zsh
     - .zprofile
     - .zshrc
-    - .ctags
     - .gitignore_global
     - .hgrc
     - .inputrc
@@ -43,6 +42,12 @@
     - .sshrc.d
     - .vimsnippets
     - .spacemacs
+
+- name: Symlink new ctags config
+  file:
+    state: link
+    src: ~/.dotfiles/.ctags
+    dest: ~/.ctags.d/custom.ctags
 
 - name: Create linux symlinks
   file:
@@ -76,6 +81,16 @@
     src: tmux.conf.j2
     dest: ~/.tmux.conf
   tags: [tmux]
+
+- name: Install nvim-plug
+  shell: nvim +qall! --headless
+  args:
+    creates: ~/.config/nvim/autoload/plug.vim
+  tags: [vim]
+
+- name: Install nvim plugins
+  shell: nvim +PlugInstall! +qall! --headless
+  tags: [vim]
 
 - name: Create iex history (otherwise it won't be saved)
   file:
