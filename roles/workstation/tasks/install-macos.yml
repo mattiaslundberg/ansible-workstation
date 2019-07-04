@@ -84,7 +84,6 @@
     - sublime-text
     - iterm2
     - thunderbird
-    - spotify
     - bitwarden
 
 - name: Install font packages
