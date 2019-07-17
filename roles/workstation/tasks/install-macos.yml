@@ -41,6 +41,7 @@
       - emacs-plus
       - antigen
       - asdf
+      - exa
 
 - name: Link emacs
   homebrew:
