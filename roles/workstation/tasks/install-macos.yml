@@ -26,6 +26,7 @@
       - python3
       - pyenv
       - pyenv-virtualenv
+      - pipenv
       - the_silver_searcher
       - zsh
       - git
