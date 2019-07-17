@@ -22,6 +22,7 @@
       - editorconfig
       - cmake
       - entr
+      - fd
       - python
       - python3
       - pyenv
