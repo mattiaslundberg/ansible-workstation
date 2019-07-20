@@ -76,6 +76,15 @@
     - tint2
   when: ansible_os_family == "Archlinux"
 
+- name: Install Tmux Plugin Mangaer
+  git:
+    dest: ~/.tmux/plugins/tpm
+    repo: "git@github.com:tmux-plugins/tpm.git"
+    recursive: yes
+    accept_hostkey: yes
+    update: no
+  tags: [tmux]
+
 - name: Install tmux.conf
   template:
     src: tmux.conf.j2
