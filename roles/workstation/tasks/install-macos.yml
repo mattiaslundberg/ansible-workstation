@@ -87,6 +87,7 @@
     - sublime-text
     - iterm2
     - bitwarden
+    - visual-studio-code
 
 - name: Install font packages
   homebrew_cask:
