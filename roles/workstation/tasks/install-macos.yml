@@ -86,7 +86,6 @@
     - virtualbox
     - sublime-text
     - iterm2
-    - thunderbird
     - bitwarden
 
 - name: Install font packages
