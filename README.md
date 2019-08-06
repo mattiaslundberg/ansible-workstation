@@ -8,19 +8,13 @@ All OSes requires an ssh key setup and working with github
 
 ## macos
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew install ansible python
+sh setupmac.sh
 ```
 
 ## Arch Linux
 ```
 pacman -S ansible
 
-```
-
-# Run
-```
 ansible-playbook install.yml
 ```
 
@@ -44,3 +38,7 @@ Add the following keyboard rules
 2. C-A-=> Maximize window right
 3. C-A-<= Maximize window left
 4. C-A-Up Maximize window
+
+## Carbon Copy Cloner
+
+Install and setup appropriate tasks.
