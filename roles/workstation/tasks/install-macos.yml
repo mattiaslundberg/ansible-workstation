@@ -1,65 +1,6 @@
 ---
-- name: Tap extra casks
-  homebrew_tap:
-    name: "{{ item }}"
-  with_items:
-    - universal-ctags/universal-ctags
-    - caskroom/cask
-    - caskroom/fonts
-    - d12frosted/emacs-plus
-  tags: [ctags, emacs]
-
-- name: Install gem dependency for ghi
-  gem:
-    name: pygments.rb
-
-- name: Install base packages
-  homebrew:
-    state: "{{ packages_state }}"
-    name:
-      - autojump
-      - tmux
-      - editorconfig
-      - cmake
-      - entr
-      - fd
-      - python
-      - python3
-      - pyenv
-      - pyenv-virtualenv
-      - pipenv
-      - the_silver_searcher
-      - zsh
-      - git
-      - git-extras
-      - hub
-      - ghi
-      - jq
-      - pv
-      - ripgrep
-      - sshrc
-      - fzf
-      - emacs-plus
-      - antigen
-      - asdf
-      - exa
-
-- name: Link emacs
-  homebrew:
-    name: emacs-plus
-    state: linked
-
-- name: Install asdf-erlang deps
-  homebrew:
-    name: wxmac
-    state: "{{ packages_state }}"
-
-- name: Install ctags
-  homebrew:
-    install_options: HEAD
-    name: universal-ctags
-    state: present
-  tags: [ctags]
+- name: Restore all packages
+  command: brew bundle --file Brewfile
 
 - name: Add brew zsh as allowed shell
   become: yes
@@ -70,31 +11,6 @@
 - name: Set loginshell
   become: true
   shell: chsh -s /usr/local/bin/zsh
-
-- name: Install cask packages
-  homebrew_cask:
-    name: "{{ item }}"
-  with_items:
-    - firefox
-    - google-chrome
-    - dropbox
-    - docker
-    - 1password
-    - bettertouchtool
-    - dash
-    - karabiner-elements
-    - virtualbox
-    - sublime-text
-    - iterm2
-    - bitwarden
-    - visual-studio-code
-
-- name: Install font packages
-  homebrew_cask:
-    name: "{{ item }}"
-    install_options: "fontdir=/Library/Fonts"
-  with_items:
-    - font-source-code-pro
 
 - name: Install python versions
   shell: CFLAGS="-I$(brew --prefix openssl)/include" LDFLAGS="-L$(brew --prefix openssl)/lib" pyenv install {{ item }} -s
