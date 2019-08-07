@@ -83,13 +83,16 @@ cask "1password"
 cask "android-platform-tools"
 cask "atom"
 cask "authy"
+cask "bartender"
 cask "bettertouchtool"
 cask "bitwarden"
+cask "carbon-copy-cloner"
 cask "coconutbattery"
 cask "dash"
 cask "discord"
 cask "docker"
 cask "dropbox"
+cask "fantastical"
 cask "firefox"
 cask "gimp"
 cask "google-chrome"
@@ -99,6 +102,7 @@ cask "karabiner-elements"
 cask "kitematic"
 cask "minikube"
 cask "ngrok"
+cask "sequel-pro"
 cask "signal"
 cask "skype"
 cask "spotify"
@@ -116,7 +120,6 @@ mas "Amphetamine", id: 937984704
 mas "Easy Pomodoro", id: 1439714447
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
-mas "Key Codes", id: 414568915
 mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
 mas "Numbers", id: 409203825
