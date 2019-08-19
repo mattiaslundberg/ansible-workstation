@@ -113,7 +113,6 @@ cask "thunderbird"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
-cask "wireshark"
 cask "caskroom/fonts/font-source-code-pro"
 mas "AdGuard for Safari", id: 1440147259
 mas "Airmail", id: 918858936
@@ -121,6 +120,7 @@ mas "Amphetamine", id: 937984704
 mas "Easy Pomodoro", id: 1439714447
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
+mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
 mas "Numbers", id: 409203825
