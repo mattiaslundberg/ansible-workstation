@@ -15,13 +15,6 @@
     update: no
   tags: [emacs, spacemacs]
 
-- name: Create config folders
-  file:
-    state: directory
-    dest: "~/{{ item }}"
-  with_items:
-    - .config/nvim
-
 - name: Create common symlinks
   file:
     state: link
@@ -61,12 +54,6 @@
     - .themes
     - .xsessionrc
   when: ansible_os_family == "Archlinux"
-
-- name: Create nvim config
-  file:
-    state: link
-    src: "~/.dotfiles/.config/nvim/init.vim"
-    dest: "~/.config/nvim/init.vim"
 
 - name: Create openbox config
   file:
