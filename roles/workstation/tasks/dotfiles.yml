@@ -13,6 +13,7 @@
     repo: "git@github.com:syl20bnr/spacemacs.git"
     accept_hostkey: yes
     update: no
+  tags: [emacs, spacemacs]
 
 - name: Create config folders
   file:
@@ -42,6 +43,7 @@
     - .sshrc.d
     - .vimsnippets
     - .spacemacs
+  tags: [emacs, spacemacs]
 
 - name: Symlink new ctags config
   file:
