@@ -38,11 +38,18 @@
     - .spacemacs
   tags: [emacs, spacemacs]
 
+- name: Create ctags config directory
+  file:
+    state: directory
+    dest: ~/.ctags.d/
+  tags: [ctags, emacs, spacemacs]
+
 - name: Symlink new ctags config
   file:
     state: link
     src: ~/.dotfiles/.ctags
-    dest: ~/.ctags.d/custom.ctags
+    dest: ~/.ctags.d/default.ctags
+  tags: [ctags, emacs, spacemacs]
 
 - name: Create linux symlinks
   file:
