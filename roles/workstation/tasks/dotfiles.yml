@@ -13,6 +13,7 @@
     repo: "git@github.com:syl20bnr/spacemacs.git"
     accept_hostkey: yes
     update: no
+    version: develop
   tags: [emacs, spacemacs]
 
 - name: Create common symlinks
