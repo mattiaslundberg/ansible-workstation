@@ -10,7 +10,6 @@ tap "mas-cli/tap"
 tap "mattiaslundberg/fastjump"
 tap "universal-ctags/universal-ctags"
 brew "libyaml"
-brew "openssl"
 brew "readline"
 brew "xz"
 brew "python"
@@ -20,6 +19,7 @@ brew "autoconf"
 brew "automake"
 brew "coreutils"
 brew "libtool"
+brew "openssl"
 brew "unixodbc"
 brew "asdf"
 brew "autojump"
@@ -118,7 +118,6 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "caskroom/fonts/font-source-code-pro"
 mas "AdGuard for Safari", id: 1440147259
-mas "Airmail", id: 918858936
 mas "Amphetamine", id: 937984704
 mas "Easy Pomodoro", id: 1439714447
 mas "GIPHY CAPTURE", id: 668208984
@@ -128,5 +127,7 @@ mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Trello", id: 1278508951
