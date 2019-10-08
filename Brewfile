@@ -49,14 +49,13 @@ brew "hub"
 brew "jq"
 brew "jsonnet"
 brew "kompose"
-brew "kubernetes-cli"
-brew "kubernetes-helm"
 brew "libmagic"
 brew "libxslt"
 brew "protobuf"
 brew "mosh"
 brew "mysql@5.7", link: true
 brew "ncdu"
+brew "neofetch"
 brew "pass"
 brew "pipenv"
 brew "postgresql"
@@ -67,6 +66,7 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
+brew "rust"
 brew "rustup-init"
 brew "sshrc"
 brew "td"
@@ -127,6 +127,7 @@ mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
+mas "Night Eye", id: 1450504903
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
