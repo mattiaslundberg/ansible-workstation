@@ -27,19 +27,3 @@
 - name: Fix asdf-nodejs installation
   command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   tags: [asdf]
-
-- name: Install pipsi
-  shell: "pyenv shell 2.7.14 && curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python"
-  args:
-    creates: ~/.local/bin/pipsi
-  tags: [pipsi]
-
-- name: Install pipsi packages
-  command: pipsi install {{ item }}
-  args:
-    creates: ~/.local/bin/{{ item }}
-  tags: [pipsi]
-  with_items:
-    - flake8
-    - autoflake
-    - isort

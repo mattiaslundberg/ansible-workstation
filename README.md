@@ -42,3 +42,7 @@ Add the following keyboard rules
 ## Carbon Copy Cloner
 
 Install and setup appropriate tasks.
+
+## Iterm2
+
+Import `iterm.json`
