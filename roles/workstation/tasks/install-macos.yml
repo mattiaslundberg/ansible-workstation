@@ -2,6 +2,15 @@
 - name: Restore all packages
   command: brew bundle --file Brewfile
 
+- name: Link openssl
+  file:
+    path: /usr/local/lib/{{ item }}.dylib
+    src: /usr/local/opt/openssl/lib/{{ item }}.dylib
+    state: link
+  with_items:
+    - libssl
+    - libcrypto
+
 - name: Add brew zsh as allowed shell
   become: yes
   template:
@@ -13,7 +22,7 @@
   shell: chsh -s /usr/local/bin/zsh
 
 - name: Install python versions
-  shell: CFLAGS="-I$(brew --prefix openssl)/include" LDFLAGS="-L$(brew --prefix openssl)/lib" pyenv install {{ item }} -s
+  shell: pyenv install {{ item }} -s
   args:
     creates: ~/.pyenv/versions/{{ item }}
   with_items: "{{ pyenv_versions }}"
