@@ -32,12 +32,8 @@ Enable the following items:
 5. Left_Option to Left_Command (Extrenal non-mac keyboards)
 
 ## BetterTouchTool
-Add the following keyboard rules
 
-1. C-A-l lock screen
-2. C-A-=> Maximize window right
-3. C-A-<= Maximize window left
-4. C-A-Up Maximize window
+Import `Default.bttpreset`
 
 ## Carbon Copy Cloner
 
