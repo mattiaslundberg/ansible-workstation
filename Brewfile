@@ -56,7 +56,6 @@ brew "libmagic"
 brew "libxslt"
 brew "protobuf"
 brew "mosh"
-brew "mysql@5.7", link: true
 brew "ncdu"
 brew "neofetch"
 brew "pass"
@@ -73,7 +72,6 @@ brew "rust"
 brew "rustup-init"
 brew "sshrc"
 brew "td"
-brew "terraform_landscape"
 brew "texinfo"
 brew "the_silver_searcher"
 brew "tldr"
@@ -86,9 +84,6 @@ brew "d12frosted/emacs-plus/emacs-plus"
 brew "mas-cli/tap/mas"
 brew "mattiaslundberg/fastjump/fastjump"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
-cask "1password"
-cask "android-platform-tools"
-cask "atom"
 cask "authy"
 cask "bartender"
 cask "bettertouchtool"
@@ -96,44 +91,28 @@ cask "bitwarden"
 cask "carbon-copy-cloner"
 cask "coconutbattery"
 cask "dash"
-cask "discord"
 cask "docker"
-cask "dropbox"
 cask "fantastical"
 cask "firefox"
 cask "font-source-code-pro"
 cask "gimp"
 cask "google-chrome"
 cask "gpg-suite"
-cask "insomnia"
 cask "iterm2"
 cask "karabiner-elements"
 cask "kitematic"
-cask "minikube"
 cask "ngrok"
-cask "sequel-pro"
-cask "signal"
-cask "skype"
 cask "spotify"
-cask "steam"
-cask "sublime-text"
 cask "tableplus"
-cask "thunderbird"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
-mas "Easy Pomodoro", id: 1439714447
 mas "GIPHY CAPTURE", id: 668208984
-mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
-mas "Night Eye", id: 1450504903
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
-mas "Trello", id: 1278508951
