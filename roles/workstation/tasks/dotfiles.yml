@@ -61,7 +61,8 @@
     - .keymap.xkb
     - .themes
     - .xsessionrc
-  when: ansible_os_family == "Archlinux"
+  tags: [keyboard]
+  when: ansible_os_family == "Archlinux" or ansible_os_family == "Debian"
 
 - name: Create karabiner config directory
   file:
