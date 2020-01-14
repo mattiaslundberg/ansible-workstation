@@ -5,6 +5,7 @@
     name: "{{ item }}"
     state: "{{ packages_state }}"
   with_items:
+    - libssl-dev
     - editorconfig
     - rustc
     - entr
