@@ -16,6 +16,12 @@
     version: develop
   tags: [emacs, spacemacs]
 
+- name: Remove default bashrc
+  file:
+    state: absent
+    dest: ~/.bashrc
+  tags: [dotfiles]
+
 - name: Create common symlinks
   file:
     state: link
