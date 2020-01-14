@@ -1,18 +1,4 @@
 ---
-- name: Install node packages
-  npm:
-    name: "{{ item }}"
-    global: yes
-    state: "{{ packages_state }}"
-  become: yes
-  environment:
-    PATH: "{{ ansible_env.PATH }}:/usr/local/bin/"
-  tags: [npm]
-  with_items:
-    - eslint
-    - tern
-    - js-beautify
-
 - name: Install asdf plugins
   command: "asdf plugin-add {{ item }}"
   args:
