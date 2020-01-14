@@ -30,6 +30,7 @@
     - fd-find
     - bat
     - exa
+    - "--git https://github.com/mattiaslundberg/fastjump.git"
 
 - name: Fzf
   git:
