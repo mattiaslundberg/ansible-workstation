@@ -6,7 +6,6 @@
     state: "{{ packages_state }}"
     upgrade: yes
   with_items:
-    - autojump
     - docker
     - vim
     - tmux
@@ -40,7 +39,6 @@
     - pyenv
     - pyenv-virtualenv
     - git-extras
-    - tmuxinator
     - zsh-pure-prompt
     - antigen-git
   tags: [install, aur]
