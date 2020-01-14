@@ -1,4 +1,9 @@
 ---
+- name: Install debian packages
+  import_tasks: install-debian.yml
+  when: ansible_os_family == "Debian"
+  tags: [install]
+
 - name: Install macOS packages
   import_tasks: install-macos.yml
   when: ansible_os_family == "Darwin"
