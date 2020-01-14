@@ -13,19 +13,18 @@
     - zsh
     - git
     - tmux
+    - llvm
   tags: [install]
 
 - name: Install snaps
-  snap:
-    name: "{{ item }}"
-    state: "{{ packages_state }}"
-    classic: yes
+  command: "snap install --classic {{ item }}"
   with_items:
     - code
+  become: yes
   tags: [install]
 
 - name: Install rust packages
-  command: cargo install {{ item }}
+  command: cargo install --force {{ item }}
   tags: [install]
   with_items:
     - fd-find
