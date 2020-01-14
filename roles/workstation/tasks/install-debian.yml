@@ -24,13 +24,15 @@
   tags: [install]
 
 - name: Install rust packages
-  command: cargo install --force {{ item }}
+  command: cargo install --force {{ item.name }}
+  args:
+    creates: ~/.cargo/bin/{{ item.bin }}
   tags: [install]
   with_items:
-    - fd-find
-    - bat
-    - exa
-    - "--git https://github.com/mattiaslundberg/fastjump.git"
+    - {"name": "fd-find", "bin": "fd"}
+    - {"name": "exa", "bin": "exa"}
+    - {"name": "bat", "bin": "bat"}
+    - {"name": "--git https://github.com/mattiaslundberg/fastjump.git", "bin": "fastjump"}
 
 - name: Fzf
   git:
