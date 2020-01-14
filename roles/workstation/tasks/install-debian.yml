@@ -29,6 +29,7 @@
   with_items:
     - fd-find
     - bat
+    - exa
 
 - name: Fzf
   git:
