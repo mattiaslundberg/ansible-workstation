@@ -17,10 +17,12 @@
   template:
     src: templates/shells.j2
     dest: /etc/shells
+  tags: [zsh]
 
 - name: Set loginshell
   become: true
   shell: chsh -s /usr/local/bin/zsh
+  tags: [zsh]
 
 - name: Install python versions
   shell: pyenv install {{ item }} -s
