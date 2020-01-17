@@ -43,7 +43,8 @@
     - .sshrc.d
     - .vimsnippets
     - .spacemacs
-  tags: [emacs, spacemacs]
+    - .fastjump.yml
+  tags: [emacs, spacemacs, fastjump]
 
 - name: Create ctags config directory
   file:
@@ -118,3 +119,15 @@
     state: touch
     path: ~/.iex_history
   tags: [iex]
+
+- name: Create ~/.cache
+  file:
+    state: directory
+    path: ~/.cache
+  tags: [dotfiles, fastjump]
+
+- name: Create fastjump visits file
+  file:
+    state: touch
+    path: ~/.cache/fastjump_visits.yml
+  tags: [dotfiles, fastjump]
