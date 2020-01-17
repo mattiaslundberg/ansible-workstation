@@ -1,6 +1,7 @@
 ---
 - name: Restore all packages
-  command: brew bundle --file Brewfile
+  command: brew bundle --file=Brewfile
+  tags: [brew]
 
 - name: Link openssl
   file:
