@@ -2,19 +2,18 @@
 - name: Install base packages
   become: true
   apt:
-    name: "{{ item }}"
     state: "{{ packages_state }}"
-  with_items:
-    - libssl-dev
-    - editorconfig
-    - rustc
-    - entr
-    - tldr
-    - vim
-    - zsh
-    - git
-    - tmux
-    - llvm
+    name:
+      - libssl-dev
+      - editorconfig
+      - rustc
+      - entr
+      - tldr
+      - vim
+      - zsh
+      - git
+      - tmux
+      - llvm
   tags: [install]
 
 - name: Install snaps

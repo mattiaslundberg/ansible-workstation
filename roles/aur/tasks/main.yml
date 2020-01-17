@@ -4,17 +4,16 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Install general AUR deps
-  pacman:
-    name: "{{ item }}"
-    state: "{{ packages_state }}"
   become: yes
   when: ansible_os_family == "Archlinux"
   tags: [install, aur]
-  with_items:
-    - base-devel
-    - perl
-    - expac
-    - git
+  pacman:
+    state: "{{ packages_state }}"
+    name:
+      - base-devel
+      - perl
+      - expac
+      - git
 
 - name: Install AUR packages
   import_tasks: install.yml

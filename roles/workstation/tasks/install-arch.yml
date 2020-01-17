@@ -2,29 +2,28 @@
 - name: Install base packages
   become: true
   pacman:
-    name: "{{ item }}"
     state: "{{ packages_state }}"
     upgrade: yes
-  with_items:
-    - docker
-    - vim
-    - tmux
-    - cmake
-    - python2
-    - python3
-    - the_silver_searcher
-    - ripgrep
-    - emacs
-    - zsh
-    - git
-    - openbox
-    - firefox
-    - chromium
-    - zeal
-    - fzf
-    - adobe-source-code-pro-fonts
-    - mate-terminal
-    - emacs
+    name:
+      - docker
+      - vim
+      - tmux
+      - cmake
+      - python2
+      - python3
+      - the_silver_searcher
+      - ripgrep
+      - emacs
+      - zsh
+      - git
+      - openbox
+      - firefox
+      - chromium
+      - zeal
+      - fzf
+      - adobe-source-code-pro-fonts
+      - mate-terminal
+      - emacs
   tags: [install]
 
 - name: Install AUR packages
