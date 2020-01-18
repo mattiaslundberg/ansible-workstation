@@ -5,14 +5,14 @@
     repo: "git@github.com:mattiaslundberg/dotfiles.git"
     recursive: yes
     accept_hostkey: yes
-    update: no
+    update: yes
 
 - name: Clone spacemacs repo
   git:
     dest: ~/.emacs.d
     repo: "git@github.com:syl20bnr/spacemacs.git"
     accept_hostkey: yes
-    update: no
+    update: yes
     version: develop
   tags: [emacs, spacemacs]
 
