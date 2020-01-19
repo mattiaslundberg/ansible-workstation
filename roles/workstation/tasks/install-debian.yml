@@ -27,7 +27,6 @@
   command: cargo install --force {{ item.name }}
   args:
     creates: ~/.cargo/bin/{{ item.bin }}
-  tags: [install]
   with_items:
     - {"name": "fd-find", "bin": "fd"}
     - {"name": "exa", "bin": "exa"}
