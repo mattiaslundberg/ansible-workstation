@@ -51,9 +51,11 @@ bind X confirm-before "kill-session -t ''"
 set -g status-interval 5
 set -g status-left-length 90
 set -g status-right-length 60
-set -g status-left "#[fg=blue]#h #[fg=white]"
+set -g status-left "#[fg=colour4]#h #[fg=white]"
 set -g status-justify left
-set -g status-right '#[fg=blue]#S'
+set -g status-right '#[fg=colour4]#S'
+set -g status-bg colour235
+set -g status-fg colour4
 set -g @continuum-restore 'on' # Restore last tmux session automatically
 set -g @continuum-boot-options 'iterm' # Use iterm for autostart
 
