@@ -22,6 +22,12 @@
     dest: ~/.bashrc
   tags: [dotfiles]
 
+- name: Remove old tmux config
+  file:
+    state: absent
+    dest: ~/.tmux.conf
+  tags: [dotfiles, tmux]
+
 - name: Create common symlinks
   file:
     state: link
@@ -44,7 +50,12 @@
     - .vimsnippets
     - .spacemacs
     - .fastjump.yml
-  tags: [emacs, spacemacs, fastjump]
+    - .tmux.conf
+  tags:
+    - emacs
+    - spacemacs
+    - fastjump
+    - tmux
 
 - name: Create ctags config directory
   file:
@@ -106,12 +117,6 @@
     recursive: yes
     accept_hostkey: yes
     update: no
-  tags: [tmux]
-
-- name: Install tmux.conf
-  template:
-    src: tmux.conf.j2
-    dest: ~/.tmux.conf
   tags: [tmux]
 
 - name: Create iex history (otherwise it won't be saved)
