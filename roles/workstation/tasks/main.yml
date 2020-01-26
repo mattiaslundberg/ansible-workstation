@@ -20,9 +20,10 @@
 
 - name: Add dotfiles
   import_tasks: dotfiles.yml
-  tags: [dotfiles]
 
 - name: Setup keyboard on macos
   import_tasks: keymap-macos.yml
   when: ansible_os_family == "Darwin"
-  tags: [keymap]
+
+- name: Install dns over https proxy
+  import_tasks: configure-dns.yaml
