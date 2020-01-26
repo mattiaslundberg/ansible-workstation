@@ -22,3 +22,7 @@
   become: yes
   command: launchctl start com.cloudflare.cloudflared
   tags: [dns]
+
+- name: Set local DNS for all Wi-Fis
+  command: networksetup -setdnsservers Wi-Fi 127.0.0.1
+  tags: [dns]
