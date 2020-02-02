@@ -39,7 +39,9 @@
     - .bashrc
     - bin
     - .zsh
+    - .zshenv
     - .zprofile
+    - .zlogin
     - .zshrc
     - .gitignore_global
     - .hgrc
@@ -52,6 +54,7 @@
     - .fastjump.yml
     - .tmux.conf
   tags:
+    - dotfiles
     - emacs
     - spacemacs
     - fastjump
