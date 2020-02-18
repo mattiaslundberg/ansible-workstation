@@ -8,7 +8,7 @@
   when: ansible_os_family == "Archlinux"
   tags: [install, aur]
   pacman:
-    state: "{{ packages_state }}"
+    state: present
     name:
       - base-devel
       - perl

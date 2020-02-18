@@ -2,7 +2,7 @@
 - name: Install base packages
   become: true
   apt:
-    state: "{{ packages_state }}"
+    state: present
     name:
       - libssl-dev
       - editorconfig

@@ -2,7 +2,7 @@
 - name: Install base packages
   become: true
   pacman:
-    state: "{{ packages_state }}"
+    state: present
     upgrade: yes
     name:
       - docker
