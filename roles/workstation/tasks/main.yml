@@ -27,3 +27,4 @@
 
 - name: Install dns over https proxy
   import_tasks: configure-dns.yaml
+  when: ansible_os_family == "Darwin"
