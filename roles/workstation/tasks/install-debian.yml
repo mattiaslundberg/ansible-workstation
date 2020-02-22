@@ -17,6 +17,13 @@
       - llvm
   tags: [install]
 
+- name: Set loginshell
+  become: true
+  shell: "chsh -s /usr/bin/zsh {{ item }}"
+  with_items: [vagrant, mattias]
+  ignore_errors: true
+  tags: [zsh]
+
 - name: Install snaps
   command: "snap install --classic {{ item }}"
   with_items:
