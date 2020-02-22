@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: false
+
+  tasks:
+    - name: Install custom packages
+      become: true
+      apt:
+        state: present
+        name:
+          - openconnect
+          - vim
+          - python3-pip
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - socat
+
+    - name: Install pipenv
+      pip:
+        name: pipenv
+
+    - name: Rabbit gpg apt key
+      become: yes
+      apt_key:
+        url: https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
+        state: present
+
+    - name: add Rabbit repo
+      apt_repository:
+        repo: deb http://www.rabbitmq.com/debian/ testing main
+        state: present
+
+    - name: Install rabbitmq
+      apt:
+        update_cache: yes
+        name: rabbitmq-server
