@@ -9,6 +9,8 @@
     - erlang
     - nodejs
     - elm
+    - terraform
+    - terragrunt
 
 - name: Fix asdf-nodejs installation
   command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
