@@ -4,6 +4,7 @@
   apt:
     state: present
     name:
+      - clang
       - libssl-dev
       - editorconfig
       - rustc
