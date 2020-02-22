@@ -19,6 +19,7 @@
 
     - name: Install pipenv
       pip:
+        executable: pip3
         name: pipenv
 
     - name: Rabbit gpg apt key
@@ -28,11 +29,13 @@
         state: present
 
     - name: add Rabbit repo
+      become: yes
       apt_repository:
         repo: deb http://www.rabbitmq.com/debian/ testing main
         state: present
 
     - name: Install rabbitmq
+      become: yes
       apt:
         update_cache: yes
         name: rabbitmq-server
