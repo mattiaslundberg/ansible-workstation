@@ -6,6 +6,7 @@
     recursive: yes
     accept_hostkey: yes
     update: yes
+  ignore_errors: yes
 
 - name: Clone spacemacs repo
   git:
