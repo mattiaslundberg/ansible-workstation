@@ -15,6 +15,27 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  config.vm.define("ubuntu") do |ubuntu|
+    ubuntu.vm.box = "ubuntu/bionic64"
+
+    ubuntu.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = 2
+      vb.linked_clone = true
+    end
+
+    config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
+
+    config.vm.provision "shell", inline: <<-SHELL
+      apt-get update && apt-get upgrade
+      apt-get install -y ansible
+    SHELL
+
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "install.yml"
+    end
+  end
+
   config.vm.define("macos") do |mac|
     mac.vm.box = "jhcook/macos-sierra"
 
