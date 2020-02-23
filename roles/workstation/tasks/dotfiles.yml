@@ -23,12 +23,6 @@
     dest: ~/.bashrc
   tags: [dotfiles]
 
-- name: Remove old tmux config
-  file:
-    state: absent
-    dest: ~/.tmux.conf
-  tags: [dotfiles, tmux]
-
 - name: Create common symlinks
   file:
     state: link
