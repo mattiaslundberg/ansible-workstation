@@ -4,6 +4,7 @@
   apt:
     state: present
     name:
+      - make
       - clang
       - unzip
       - libssl-dev
@@ -29,6 +30,7 @@
   command: "snap install --classic {{ item }}"
   with_items:
     - code
+    - universal-ctags
   become: yes
   tags: [install]
 
