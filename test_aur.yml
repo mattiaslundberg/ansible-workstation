@@ -1,7 +1,0 @@
----
-- hosts: all
-  become: false
-
-  roles:
-    - role: aur
-      package_name: cower
