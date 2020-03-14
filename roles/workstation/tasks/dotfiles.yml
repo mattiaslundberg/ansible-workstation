@@ -1,5 +1,5 @@
 ---
-- name: Clone repo
+- name: Clone dotfiles repo
   git:
     dest: ~/.dotfiles
     repo: "git@github.com:mattiaslundberg/dotfiles.git"
@@ -8,13 +8,12 @@
     update: yes
   ignore_errors: yes
 
-- name: Clone spacemacs repo
+- name: Clone doom-emacs repo
   git:
     dest: ~/.emacs.d
-    repo: "git@github.com:syl20bnr/spacemacs.git"
+    repo: "git@github.com:hlissner/doom-emacs.git"
     accept_hostkey: yes
     update: yes
-    version: develop
   tags: [emacs, spacemacs]
 
 - name: Remove default bashrc
@@ -48,6 +47,7 @@
     - .spacemacs
     - .fastjump.yml
     - .tmux.conf
+    - .doom.d
   tags:
     - dotfiles
     - emacs
