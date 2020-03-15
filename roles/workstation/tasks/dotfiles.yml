@@ -80,6 +80,19 @@
   tags: [keyboard]
   when: ansible_os_family == "Archlinux" or ansible_os_family == "Debian"
 
+- name: Check if gitconfig exists
+  stat:
+    path: ~/.gitconfig
+  register: gitconfig_stat
+  tags: [git]
+
+- name: Create gitconfig
+  copy:
+    src: ~/.dotfiles/.gitconfig
+    dest: ~/.gitconfig
+  when: not gitconfig_stat.stat.exists
+  tags: [git]
+
 - name: Create openbox config
   file:
     state: link
