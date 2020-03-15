@@ -80,24 +80,6 @@
   tags: [keyboard]
   when: ansible_os_family == "Archlinux" or ansible_os_family == "Debian"
 
-- name: Create karabiner config directory
-  file:
-    state: directory
-    path: ~/.config/karabiner/
-  when:  ansible_os_family == "Darwin"
-  tags: [karabiner, keyboard]
-
-- name: Create Karabiner config
-  file:
-    state: link
-    src: ~/.dotfiles/.config/karabiner/{{ item }}
-    dest: ~/.config/karabiner/{{ item }}
-  with_items:
-    - complex_modifications
-    - karabiner.json
-  when: ansible_os_family == "Darwin"
-  tags: [karabiner, keyboard]
-
 - name: Create openbox config
   file:
     state: link

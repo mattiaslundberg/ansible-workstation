@@ -1,1 +1,16 @@
 ---
+- name: Create karabiner config directory
+  file:
+    state: directory
+    path: ~/.config/karabiner/
+  tags: [karabiner, keyboard]
+
+- name: Create Karabiner config
+  file:
+    state: link
+    src: ~/.dotfiles/.config/karabiner/{{ item }}
+    dest: ~/.config/karabiner/{{ item }}
+  with_items:
+    - complex_modifications
+    - karabiner.json
+  tags: [karabiner, keyboard]
