@@ -14,7 +14,7 @@
     repo: "git@github.com:hlissner/doom-emacs.git"
     accept_hostkey: yes
     update: yes
-  tags: [emacs, spacemacs]
+  tags: [emacs]
 
 - name: Remove default bashrc
   file:
@@ -44,14 +44,12 @@
     - .sshrc
     - .sshrc.d
     - .vimsnippets
-    - .spacemacs
     - .fastjump.yml
     - .tmux.conf
     - .doom.d
   tags:
     - dotfiles
     - emacs
-    - spacemacs
     - fastjump
     - tmux
 
@@ -59,14 +57,14 @@
   file:
     state: directory
     dest: ~/.ctags.d/
-  tags: [ctags, emacs, spacemacs]
+  tags: [ctags, emacs]
 
 - name: Symlink new ctags config
   file:
     state: link
     src: ~/.dotfiles/.ctags
     dest: ~/.ctags.d/default.ctags
-  tags: [ctags, emacs, spacemacs]
+  tags: [ctags, emacs]
 
 - name: Create linux symlinks
   file:

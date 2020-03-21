@@ -128,11 +128,11 @@
   apt_repository:
     repo: ppa:kelleyk/emacs
     state: present
-  tags: [emacs, spacemacs, install]
+  tags: [emacs, install]
 
 - name: Install emacs
   become: yes
   apt:
     name: emacs26
     state: present
-  tags: [emacs, spacemacs, install]
+  tags: [emacs, install]
