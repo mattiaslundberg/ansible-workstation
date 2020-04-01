@@ -14,3 +14,26 @@
     - complex_modifications
     - karabiner.json
   tags: [karabiner, keyboard]
+
+- name: Symlink spacehammer config
+  file:
+    state: link
+    src: "~/.dotfiles/.spacehammer"
+    dest: "~/.spacehammer"
+  tags: [spacehammer]
+
+- name: Clone spacehammer repo
+  git:
+    dest: ~/.hammerspoon
+    repo: "git@github.com:agzam/spacehammer.git"
+    recursive: yes
+    accept_hostkey: yes
+    update: yes
+  ignore_errors: yes
+  tags: [spacehammer]
+
+- name: Install fennel
+  command: luarocks install fennel
+  args:
+    creates: /usr/local/bin/fennel
+  tags: [spacehammer]
