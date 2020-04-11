@@ -39,7 +39,6 @@
     - .zshrc
     - .gitignore_global
     - .hgrc
-    - .inputrc
     - .screenrc
     - .sshrc
     - .sshrc.d
