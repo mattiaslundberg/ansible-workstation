@@ -26,12 +26,12 @@ brew "aws-iam-authenticator"
 brew "awscli"
 brew "bash"
 brew "bat"
-brew "python"
 brew "clang-format"
 brew "clisp"
 brew "cloc"
 brew "cmake"
 brew "curl"
+brew "python"
 brew "editorconfig"
 brew "entr"
 brew "exa"
@@ -47,6 +47,7 @@ brew "gnu-sed"
 brew "go"
 brew "gotop"
 brew "graphviz"
+brew "hadolint"
 brew "icu4c"
 brew "harfbuzz"
 brew "highlight"
@@ -64,6 +65,7 @@ brew "protobuf"
 brew "mosh"
 brew "ncdu"
 brew "neofetch"
+brew "nim"
 brew "osx-cpu-temp"
 brew "pipenv"
 brew "postgresql"
@@ -83,6 +85,7 @@ brew "sshrc"
 brew "td"
 brew "texinfo"
 brew "the_silver_searcher"
+brew "tidy-html5"
 brew "tldr"
 brew "tmux"
 brew "tokei"
@@ -92,7 +95,7 @@ brew "wxmac"
 brew "zlib"
 brew "zsh"
 brew "cloudflare/cloudflare/cloudflared"
-brew "d12frosted/emacs-plus/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-emacs-27-branch", "with-modern-icon"]
 brew "liamg/tfsec/tfsec"
 brew "mas-cli/tap/mas"
 brew "mattiaslundberg/fastjump/fastjump"
@@ -108,6 +111,10 @@ cask "dash"
 cask "discord"
 cask "docker"
 cask "firefox"
+cask "font-fira-code"
+cask "font-firacode-nerd-font"
+cask "font-firacode-nerd-font-mono"
+cask "font-hasklig"
 cask "font-source-code-pro"
 cask "gimp"
 cask "google-chrome"
@@ -128,13 +135,13 @@ cask "visual-studio-code"
 cask "vlc"
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
+mas "Dark Reader for Safari", id: 1438243180
 mas "GarageBand", id: 682658836
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Lightshot Screenshot", id: 526298438
-mas "Night Eye", id: 1450504903
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
