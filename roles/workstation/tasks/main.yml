@@ -28,7 +28,3 @@
 - name: Setup keyboard on macos
   import_tasks: keymap-macos.yml
   when: ansible_os_family == "Darwin"
-
-- name: Install dns over https proxy
-  import_tasks: configure-dns.yaml
-  when: ansible_os_family == "Darwin"
