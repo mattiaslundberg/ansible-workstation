@@ -32,7 +32,6 @@
     - .aliases
     - .bashrc
     - bin
-    - .zsh
     - .zshenv
     - .zprofile
     - .zlogin
@@ -42,7 +41,6 @@
     - .screenrc
     - .sshrc
     - .sshrc.d
-    - .vimsnippets
     - .fastjump.yml
     - .tmux.conf
     - .doom.d
