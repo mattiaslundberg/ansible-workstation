@@ -1,4 +1,5 @@
 tap "d12frosted/emacs-plus"
+tap "garden-io/garden"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -31,23 +32,26 @@ brew "editorconfig"
 brew "entr"
 brew "exa"
 brew "fd"
+brew "fish"
 brew "fzf"
+brew "gmp"
 brew "gdb"
 brew "git"
 brew "git-delta"
 brew "git-extras"
 brew "git-quick-stats"
-brew "gmp"
 brew "gnu-sed"
+brew "gnutls"
 brew "go"
 brew "gotop"
 brew "python"
-brew "graphviz"
-brew "hadolint"
 brew "icu4c"
 brew "harfbuzz"
+brew "graphviz"
+brew "hadolint"
 brew "highlight"
 brew "htop"
+brew "ical-buddy"
 brew "jq"
 brew "jsonnet"
 brew "kompose"
@@ -58,6 +62,7 @@ brew "protobuf"
 brew "mosh"
 brew "ncdu"
 brew "neofetch"
+brew "openconnect"
 brew "osx-cpu-temp"
 brew "pipenv"
 brew "postgresql"
@@ -73,6 +78,7 @@ brew "rustup-init"
 brew "scc"
 brew "shellcheck"
 brew "shfmt"
+brew "sshfs"
 brew "td"
 brew "texinfo"
 brew "the_silver_searcher"
@@ -85,7 +91,7 @@ brew "watchman"
 brew "wxmac"
 brew "zlib"
 brew "zsh"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-emacs-27-branch", "with-modern-icon"]
+brew "garden-io/garden/garden-cli"
 brew "liamg/tfsec/tfsec"
 brew "mas-cli/tap/mas"
 brew "mattiaslundberg/fastjump/fastjump"
@@ -120,18 +126,15 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
 mas "AdGuard for Safari", id: 1440147259
-mas "Amphetamine", id: 937984704
 mas "Dark Reader for Safari", id: 1438243180
 mas "GarageBand", id: 682658836
-mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
-mas "Lightshot Screenshot", id: 526298438
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Pocket", id: 568494494
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Trello", id: 1278508951
+mas "Vimari", id: 1480933944
