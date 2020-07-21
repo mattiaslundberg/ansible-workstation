@@ -4,6 +4,8 @@
   args:
     creates: "~/.asdf/plugins/{{ item }}"
   tags: [asdf]
+  environment:
+    PATH: "{{ ansible_env.PATH }}:/home/vagrant/.asdf/bin"
   with_items:
     - elixir
     - erlang
