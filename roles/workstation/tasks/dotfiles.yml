@@ -22,6 +22,12 @@
     dest: ~/.bashrc
   tags: [dotfiles]
 
+- name: Remove default zshrc
+  file:
+    state: absent
+    dest: ~/.zshrc
+  tags: [dotfiles]
+
 - name: Create common symlinks
   file:
     state: link
