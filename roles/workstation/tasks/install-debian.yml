@@ -4,6 +4,8 @@
   apt:
     state: present
     name:
+      - zlib1g-dev
+      - postgresql-client
       - make
       - clang
       - unzip
