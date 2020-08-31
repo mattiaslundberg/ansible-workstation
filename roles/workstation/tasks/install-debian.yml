@@ -19,6 +19,7 @@
       - git
       - tmux
       - llvm
+      - libpq-dev
   tags: [install]
 
 - name: Set loginshell
