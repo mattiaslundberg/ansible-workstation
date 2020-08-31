@@ -39,10 +39,13 @@
   args:
     creates: ~/.cargo/bin/{{ item.bin }}
   with_items:
-    - {"name": "fd-find", "bin": "fd"}
-    - {"name": "exa", "bin": "exa"}
-    - {"name": "bat", "bin": "bat"}
-    - {"name": "--git https://github.com/mattiaslundberg/fastjump.git", "bin": "fastjump"}
+    - { "name": "fd-find", "bin": "fd" }
+    - { "name": "exa", "bin": "exa" }
+    - { "name": "bat", "bin": "bat" }
+    - {
+        "name": "--git https://github.com/mattiaslundberg/fastjump.git",
+        "bin": "fastjump",
+      }
   tags: [install]
 
 - name: Fzf
@@ -103,8 +106,11 @@
   become: yes
   apt:
     update_cache: yes
-    name: docker-ce
+    name: "{{ item }}"
     state: latest
+  with_items:
+    - docker-ce
+    - docker-compose
   tags: [docker, install]
 
 - name: Create docker group
@@ -122,6 +128,9 @@
       - docker
   with_items: [mattias, vagrant]
   tags: [docker, install]
+
+- name: reset ssh connection to allow user changes to affect 'current login user'
+  meta: reset_connection
 
 - name: Add emacs Repository
   become: yes
