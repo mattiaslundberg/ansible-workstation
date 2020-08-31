@@ -20,6 +20,8 @@
       - tmux
       - llvm
       - libpq-dev
+      - libsqlite3-dev
+      - autoconf
   tags: [install]
 
 - name: Set loginshell
