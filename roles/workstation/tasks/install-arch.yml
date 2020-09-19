@@ -9,9 +9,7 @@
       - vim
       - tmux
       - cmake
-      - python2
       - python3
-      - the_silver_searcher
       - ripgrep
       - emacs
       - zsh
@@ -33,7 +31,6 @@
     - entr
     - shutter
     - antigen-git
-    - sshrc-git
     - editorconfig-core-c
     - pyenv
     - pyenv-virtualenv
