@@ -10,6 +10,7 @@ tap "homebrew/services"
 tap "liamg/tfsec"
 tap "mas-cli/tap"
 tap "mattiaslundberg/fastjump"
+tap "nektos/tap"
 tap "universal-ctags/universal-ctags"
 brew "ansible"
 brew "ansible-lint"
@@ -34,17 +35,16 @@ brew "exa"
 brew "fd"
 brew "fish"
 brew "fzf"
-brew "gmp"
 brew "gdb"
 brew "git"
 brew "git-delta"
 brew "git-extras"
 brew "git-quick-stats"
+brew "gmp"
 brew "gnu-sed"
 brew "gnutls"
 brew "go"
 brew "gotop"
-brew "python"
 brew "icu4c"
 brew "harfbuzz"
 brew "graphviz"
@@ -86,15 +86,18 @@ brew "tidy-html5"
 brew "tldr"
 brew "tmux"
 brew "tokei"
+brew "trash"
+brew "travis"
 brew "watch"
 brew "watchman"
 brew "wxmac"
 brew "zlib"
 brew "zsh"
+brew "d12frosted/emacs-plus/emacs-plus@28"
 brew "garden-io/garden/garden-cli"
 brew "liamg/tfsec/tfsec"
-brew "mas-cli/tap/mas"
 brew "mattiaslundberg/fastjump/fastjump"
+brew "nektos/tap/act"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "authy"
 cask "barrier"
@@ -125,16 +128,3 @@ cask "tableplus"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
-mas "AdGuard for Safari", id: 1440147259
-mas "Dark Reader for Safari", id: 1438243180
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Just Focus", id: 1142151959
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Slack", id: 803453959
-mas "Spark", id: 1176895641
-mas "The Unarchiver", id: 425424353
-mas "Trello", id: 1278508951
-mas "Vimari", id: 1480933944
