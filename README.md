@@ -24,10 +24,6 @@ ansible-playbook install.yml
 
 # Manual steps
 
-## BetterTouchTool
-
-Import `Default.bttpreset`
-
 ## Carbon Copy Cloner
 
 Install and setup appropriate tasks.
