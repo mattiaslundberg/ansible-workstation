@@ -1,9 +1,33 @@
 ---
+- name: Add Docker GPG apt Key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags: [docker, install]
+
+- name: Add Docker Repository
+  become: yes
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+  tags: [docker, install]
+
+- name: Add emacs Repository
+  become: yes
+  apt_repository:
+    repo: ppa:kelleyk/emacs
+    state: present
+  tags: [emacs, install]
+
 - name: Install base packages
   become: true
   apt:
     state: present
     name:
+      - emacs27
+      - docker-ce
+      - docker-compose
       - zlib1g-dev
       - postgresql-client
       - make
@@ -92,20 +116,6 @@
     update: no
   tags: [asdf, install]
 
-- name: Add Docker GPG apt Key
-  become: yes
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
-  tags: [docker, install]
-
-- name: Add Docker Repository
-  become: yes
-  apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu bionic stable
-    state: present
-  tags: [docker, install]
-
 - name: Update apt and install docker-ce
   become: yes
   apt:
@@ -113,8 +123,6 @@
     name: "{{ item }}"
     state: latest
   with_items:
-    - docker-ce
-    - docker-compose
   tags: [docker, install]
 
 - name: Create docker group
@@ -134,17 +142,3 @@
 
 - name: reset ssh connection to allow user changes to affect 'current login user'
   meta: reset_connection
-
-- name: Add emacs Repository
-  become: yes
-  apt_repository:
-    repo: ppa:kelleyk/emacs
-    state: present
-  tags: [emacs, install]
-
-- name: Install emacs
-  become: yes
-  apt:
-    name: emacs27
-    state: present
-  tags: [emacs, install]
