@@ -69,7 +69,6 @@
   with_items:
     - { "name": "exa", "bin": "exa" }
     - { "name": "bat", "bin": "bat" }
-    - { "name": "delta", "bin": "git-delta" }
     - {
         "name": "--git https://github.com/mattiaslundberg/fastjump.git",
         "bin": "fastjump",
