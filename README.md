@@ -12,6 +12,16 @@ Generate ssh key and upload to github
 sh setupmac.sh
 ```
 
+## Ubuntu (20.04 or later)
+
+Generate ssh key and upload to github
+
+```
+sudo apt install ansible
+
+ansible-playbook install.yml
+```
+
 ## Arch Linux
 
 Generate ssh key and upload to github
