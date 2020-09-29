@@ -147,6 +147,6 @@
 - name: Install emacs
   become: yes
   apt:
-    name: emacs26
+    name: emacs27
     state: present
   tags: [emacs, install]
