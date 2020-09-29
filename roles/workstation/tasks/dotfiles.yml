@@ -44,8 +44,6 @@
     - .zshrc
     - .gitignore_global
     - .screenrc
-    - .sshrc
-    - .sshrc.d
     - .fastjump.yml
     - .tmux.conf
     - .doom.d
