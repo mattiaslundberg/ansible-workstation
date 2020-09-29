@@ -69,28 +69,6 @@
     dest: ~/.ctags.d/default.ctags
   tags: [ctags, emacs]
 
-- name: Create linux symlinks
-  file:
-    state: link
-    src: "~/.dotfiles/{{ item }}"
-    dest: "~/{{ item }}"
-  with_items:
-    - .keymap.xkb
-    - .themes
-    - .xsessionrc
-  tags: [keyboard]
-  when: ansible_os_family == "Archlinux" or ansible_os_family == "Debian"
-
-- name: Create openbox config
-  file:
-    state: link
-    src: "~/.dotfiles/.config/{{ item }}"
-    dest: "~/.config/{{ item }}"
-  with_items:
-    - openbox
-    - tint2
-  when: ansible_os_family == "Archlinux"
-
 - name: Install Tmux Plugin Mangaer
   git:
     dest: ~/.tmux/plugins/tpm
