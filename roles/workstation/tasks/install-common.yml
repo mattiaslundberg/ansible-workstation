@@ -24,3 +24,4 @@
     creates: ~/.pyenv/versions/{{ item }}
   with_items: "{{ pyenv_versions }}"
   tags: [python, install]
+  ignore_errors: yes
