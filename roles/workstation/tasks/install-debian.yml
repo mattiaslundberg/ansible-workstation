@@ -46,12 +46,12 @@
       - libpq-dev
       - libsqlite3-dev
       - autoconf
+    update_cache: yes
   tags: [install]
 
 - name: Set loginshell
   become: true
   shell: "chsh -s /usr/bin/zsh {{ lookup('env', 'USER') }}"
-  ignore_errors: true
   tags: [zsh]
 
 - name: Install snaps
@@ -115,15 +115,6 @@
     accept_hostkey: yes
     update: no
   tags: [asdf, install]
-
-- name: Update apt and install docker-ce
-  become: yes
-  apt:
-    update_cache: yes
-    name: "{{ item }}"
-    state: latest
-  with_items:
-  tags: [docker, install]
 
 - name: Create docker group
   become: yes
