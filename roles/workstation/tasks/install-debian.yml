@@ -13,19 +13,11 @@
     state: present
   tags: [docker, install]
 
-- name: Add emacs Repository
-  become: yes
-  apt_repository:
-    repo: ppa:kelleyk/emacs
-    state: present
-  tags: [emacs, install]
-
 - name: Install base packages
   become: true
   apt:
     state: present
     name:
-      - emacs27
       - docker-ce
       - docker-compose
       - zlib1g-dev
@@ -46,6 +38,7 @@
       - libpq-dev
       - libsqlite3-dev
       - autoconf
+      - fd-find
     update_cache: yes
   tags: [install]
 
@@ -62,14 +55,19 @@
   become: yes
   tags: [install]
 
+- name: Install emacs
+  command: "snap install --classic --edge emacs"
+  become: yes
+  tags: [install]
+
 - name: Install rust packages
   command: cargo install --force {{ item.name }}
   args:
     creates: ~/.cargo/bin/{{ item.bin }}
   with_items:
-    - { "name": "fd-find", "bin": "fd" }
     - { "name": "exa", "bin": "exa" }
     - { "name": "bat", "bin": "bat" }
+    - { "name": "delta", "bin": "git-delta" }
     - {
         "name": "--git https://github.com/mattiaslundberg/fastjump.git",
         "bin": "fastjump",
