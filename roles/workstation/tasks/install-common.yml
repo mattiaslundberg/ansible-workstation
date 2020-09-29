@@ -17,3 +17,10 @@
 - name: Fix asdf-nodejs installation
   command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   tags: [asdf]
+
+- name: Install python versions
+  shell: pyenv install {{ item }} -s
+  args:
+    creates: ~/.pyenv/versions/{{ item }}
+  with_items: "{{ pyenv_versions }}"
+  tags: [python, install]

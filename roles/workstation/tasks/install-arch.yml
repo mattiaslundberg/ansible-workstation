@@ -38,10 +38,3 @@
     - zsh-pure-prompt
     - antigen-git
   tags: [install, aur]
-
-- name: Install python versions
-  shell: pyenv install {{ item }} -s
-  args:
-    creates: ~/.pyenv/versions/{{ item }}
-  with_items: "{{ pyenv_versions }}"
-  tags: [python, install]
