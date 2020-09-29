@@ -3,11 +3,4 @@
   become: false
 
   roles:
-   - role: workstation
-
-  pre_tasks:
-    - name: Upgrade pacman packages
-      become: yes
-      pacman:
-        update_cache: yes
-      when: ansible_os_family == "Archlinux"
+    - role: workstation
