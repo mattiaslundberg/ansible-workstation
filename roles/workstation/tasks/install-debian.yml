@@ -26,8 +26,7 @@
 
 - name: Set loginshell
   become: true
-  shell: "chsh -s /usr/bin/zsh {{ item }}"
-  with_items: [vagrant, mattias]
+  shell: "chsh -s /usr/bin/zsh {{ lookup('env', 'USER') }}"
   ignore_errors: true
   tags: [zsh]
 
@@ -127,11 +126,10 @@
 - name: Add current user to docker group
   become: yes
   user:
-    name: "{{ item }}"
+    name: "{{ lookup('env', 'USER') }}"
     append: yes
     groups:
       - docker
-  with_items: [mattias, vagrant]
   tags: [docker, install]
 
 - name: reset ssh connection to allow user changes to affect 'current login user'
