@@ -49,18 +49,21 @@
   with_items: ["mattias", "vagrant"]
   tags: [zsh]
 
-- name: Install snaps
-  command: "snap install --classic {{ item }}"
-  with_items:
-    - code
-    - universal-ctags
-  become: yes
+- name: Install universal-ctags
+  become: true
+  comunity.general.snap:
+    name: universal-ctags
+    classic: yes
   tags: [install]
 
 - name: Install emacs
-  command: "snap install --classic --edge emacs"
   become: yes
-  tags: [install]
+  community.general.snap:
+    name: emacs
+    classic: yes
+    state: present
+    channel: edge
+  tags: [emacs, install]
 
 - name: Install rust packages
   command: cargo install --force {{ item.name }}
