@@ -56,11 +56,13 @@
     - .tmux.conf
     - .doom.d
     - .gitconfig
+    - .tool-versions
   tags:
     - dotfiles
     - emacs
     - fastjump
     - tmux
+    - asdf
 
 - name: Create ctags config directory
   file:
