@@ -16,6 +16,14 @@
     update: yes
   tags: [emacs]
 
+- name: Clone elixir-ls (installed from upgrade command)
+  git:
+    dest: ~/.elixir-ls
+    repo: git@github.com:elixir-lsp/elixir-ls.git
+    accept_hostkey: yes
+    update: yes
+  tags: [elixir]
+
 - name: Remove default bashrc
   file:
     state: absent
