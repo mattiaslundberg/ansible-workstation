@@ -57,6 +57,7 @@
     - .doom.d
     - .gitconfig
     - .tool-versions
+    - .rgignore
   tags:
     - dotfiles
     - emacs
