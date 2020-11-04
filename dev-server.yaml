@@ -22,20 +22,14 @@
           - git
           - llvm
           - autoconf
+          - fd-find
+          - ripgrep
 
     - name: Install snaps
       command: "snap install --classic {{ item }}"
       with_items:
         - universal-ctags
       become: yes
-
-    - name: Install rust packages
-      command: cargo install --force {{ item.name }}
-      args:
-        creates: ~/.cargo/bin/{{ item.bin }}
-      with_items:
-        - { "name": "fd-find", "bin": "fd" }
-      tags: [install]
 
     - name: Copy ssh key
       copy:
