@@ -25,6 +25,12 @@
           - fd-find
           - ripgrep
 
+    - name: Symlink fd
+      file:
+        state: link
+        src: "/usr/bin/fdfind"
+        dest: "/usr/bin/fd"
+
     - name: Install snaps
       command: "snap install --classic {{ item }}"
       with_items:

@@ -42,6 +42,12 @@
     update_cache: yes
   tags: [install]
 
+- name: Symlink fd
+  file:
+    state: link
+    src: "/usr/bin/fdfind"
+    dest: "/usr/bin/fd"
+
 - name: Set loginshell
   become: true
   shell: "chsh -s /usr/bin/zsh {{ item }}"
