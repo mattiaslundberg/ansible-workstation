@@ -58,6 +58,7 @@
     - .gitconfig
     - .tool-versions
     - .rgignore
+    - .iex.exs
   tags:
     - dotfiles
     - emacs
