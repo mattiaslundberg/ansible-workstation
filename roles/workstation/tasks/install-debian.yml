@@ -43,6 +43,7 @@
   tags: [install]
 
 - name: Symlink fd
+  become: true
   file:
     state: link
     src: "/usr/bin/fdfind"
