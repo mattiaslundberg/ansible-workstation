@@ -100,7 +100,7 @@
     repo: "git@github.com:pyenv/pyenv.git"
     accept_hostkey: yes
     update: no
-  tags: [pyenv, install]
+  tags: [python]
 
 - name: Install pyenv-virtualenv
   git:
@@ -108,7 +108,7 @@
     repo: "git@github.com:pyenv/pyenv-virtualenv.git"
     accept_hostkey: yes
     update: no
-  tags: [pyenv, install]
+  tags: [python]
 
 - name: Install asdf
   git:
