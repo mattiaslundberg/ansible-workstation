@@ -20,6 +20,7 @@
     name:
       - docker-ce
       - docker-compose
+      - curl
       - zlib1g-dev
       - postgresql-client
       - make
