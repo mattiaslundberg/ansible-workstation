@@ -3,14 +3,14 @@
   command: brew bundle --file=Brewfile
   tags: [brew]
 
-- name: Link openssl
-  file:
-    path: /usr/local/lib/{{ item }}.dylib
-    src: /usr/local/opt/openssl/lib/{{ item }}.dylib
-    state: link
-  with_items:
-    - libssl
-    - libcrypto
+# - name: Link openssl
+#   file:
+#     path: /usr/local/lib/{{ item }}.dylib
+#     src: /usr/local/opt/openssl/lib/{{ item }}.dylib
+#     state: link
+#   with_items:
+#     - libssl
+#     - libcrypto
 
 - name: Add brew zsh as allowed shell
   become: yes

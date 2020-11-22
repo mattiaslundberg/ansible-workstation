@@ -9,14 +9,4 @@
     - .themes
     - .xsessionrc
   tags: [keyboard]
-  when: ansible_os_family == "Archlinux" or ansible_os_family == "Debian"
-
-- name: Create openbox config
-  file:
-    state: link
-    src: "~/.dotfiles/.config/{{ item }}"
-    dest: "~/.config/{{ item }}"
-  with_items:
-    - openbox
-    - tint2
-  when: ansible_os_family == "Archlinux"
+  when: ansible_os_family == "Debian"

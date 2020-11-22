@@ -9,11 +9,6 @@
   when: ansible_os_family == "Darwin"
   tags: [install]
 
-- name: Install Arch linux packages
-  import_tasks: install-arch.yml
-  when: ansible_os_family == "Archlinux"
-  tags: [install]
-
 - name: Install system independent packages
   import_tasks: install-common.yml
   tags: [install]
