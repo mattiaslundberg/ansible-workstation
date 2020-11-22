@@ -8,6 +8,7 @@
    - curl  # Installing
    - git  # Cloning stuff
    - luarocks  # Spacehammer/fennel
+   - antigen  # Shell config
 
 - name: Restore all packages
   command: brew bundle --file=Brewfile
