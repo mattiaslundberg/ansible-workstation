@@ -7,7 +7,6 @@ All OSes requires an ssh key setup and working with github
 ## macos
 
  * Generate ssh key and upload to github
- * Copy `install.example.yml` to `install.yml` and edit
  * Install homebrew and ansible
  * Run `ansible-playbook install.yml`
 
