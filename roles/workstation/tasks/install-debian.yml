@@ -58,18 +58,12 @@
 
 - name: Install universal-ctags
   become: true
-  comunity.general.snap:
-    name: universal-ctags
-    classic: yes
+  command: snap install --classic universal-ctags
   tags: [install]
 
 - name: Install emacs
   become: yes
-  community.general.snap:
-    name: emacs
-    classic: yes
-    state: present
-    channel: edge
+  command: snap install --classic --edge emacs
   tags: [emacs, install]
 
 - name: Install rust packages
