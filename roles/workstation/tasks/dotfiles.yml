@@ -64,7 +64,6 @@
     - emacs
     - fastjump
     - tmux
-    - asdf
 
 - name: Create ctags config directory
   file:

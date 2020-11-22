@@ -2,19 +2,20 @@
 - name: Install debian packages
   import_tasks: install-debian.yml
   when: ansible_os_family == "Debian"
-  tags: [install]
 
 - name: Install macOS packages
   import_tasks: install-macos.yml
   when: ansible_os_family == "Darwin"
-  tags: [install]
 
 - name: Install system independent packages
   import_tasks: install-common.yml
-  tags: [install]
 
 - name: Add dotfiles
   import_tasks: dotfiles.yml
+
+- name: Setup asdf
+  import_tasks: asdf.yml
+  tags: [adsf]
 
 - name: Add dotfiles on macOS
   import_tasks: dotfiles-macos.yml

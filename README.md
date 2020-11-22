@@ -4,6 +4,12 @@ Ansible playbook/roles for setup of workstation
 
 All OSes requires an ssh key setup and working with github
 
+## Partial install
+
+Add `--skip-tags` with any of the following tags to skip parts of the setup:
+
+ * `asfd` Don't install asdf plugins
+
 ## macos
 
  * Generate ssh key and upload to github
