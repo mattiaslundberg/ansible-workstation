@@ -7,9 +7,6 @@
   import_tasks: install-macos.yml
   when: ansible_os_family == "Darwin"
 
-- name: Install system independent packages
-  import_tasks: install-common.yml
-
 - name: Add dotfiles
   import_tasks: dotfiles.yml
   
