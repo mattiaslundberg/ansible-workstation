@@ -1,7 +1,17 @@
 ---
+- name: Install base packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+   - zsh  # Changing shell
+   - curl  # Installing
+   - git  # Cloning stuff
+   - luarocks  # Spacehammer/fennel
+
 - name: Restore all packages
   command: brew bundle --file=Brewfile
-  tags: [brew]
+  tags: [brew, extra]
 
 # - name: Link openssl
 #   file:

@@ -11,6 +11,7 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
  * `asfd` Don't install asdf plugins
  * `python` Don't install python versions
  * `elixir` Don't install elixir utils
+ * `extra` Only install base packages
 
 ## macos
 
