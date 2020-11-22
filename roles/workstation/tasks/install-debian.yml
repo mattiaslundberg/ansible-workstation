@@ -72,7 +72,6 @@
     creates: ~/.cargo/bin/{{ item.bin }}
   with_items:
     - { "name": "exa", "bin": "exa" }
-    - { "name": "bat", "bin": "bat" }
     - {
         "name": "--git https://github.com/mattiaslundberg/fastjump.git",
         "bin": "fastjump",
