@@ -30,6 +30,7 @@
       - editorconfig
       - rustc
       - entr
+      - fzf
       - tldr
       - vim
       - zsh
