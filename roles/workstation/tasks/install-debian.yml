@@ -74,10 +74,6 @@
     creates: ~/.cargo/bin/{{ item.bin }}
   with_items:
     - { "name": "exa", "bin": "exa" }
-    - {
-        "name": "--git https://github.com/mattiaslundberg/fastjump.git",
-        "bin": "fastjump",
-      }
   tags: [install]
 
 - name: Fzf

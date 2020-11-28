@@ -52,7 +52,6 @@
     - .zshrc
     - .gitignore_global
     - .screenrc
-    - .fastjump.yml
     - .tmux.conf
     - .doom.d
     - .gitconfig
@@ -62,7 +61,6 @@
   tags:
     - dotfiles
     - emacs
-    - fastjump
     - tmux
 
 - name: Create ctags config directory
