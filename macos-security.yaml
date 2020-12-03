@@ -1,0 +1,44 @@
+---
+- hosts: all
+  become: false
+
+  tasks:
+    - name: Activate system encryption
+      become: true
+      command: fdesetup enable
+
+    - name: Activate firewall
+      become: true
+      command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+    - name: Activate firewall logging
+      become: true
+      command: /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+      
+    - name: Activate stealth mode
+      become: true
+      command: /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+    - name: Don't allow built-in applications automatically
+      become: true
+      command: /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
+      
+    - name: Don't allow signed applications automatically
+      become: true
+      command: /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
+
+    - name: Disable captive portal
+      become: true
+      command: defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
+
+    - name: Show filename extensions
+      command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+    - name: Show hidden files
+      command: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+    - name: Require password from screensaver
+      command: defaults write com.apple.screensaver askForPassword -int 1
+
+    - name: Require password immediately
+      command: defaults write com.apple.screensaver askForPasswordDelay -int 0

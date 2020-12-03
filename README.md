@@ -15,9 +15,12 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
 
 ## macos
 
+ * Change computer name (Settings -> Sharing)
  * Generate ssh key and upload to github
  * Install homebrew and ansible
- * Run `ansible-playbook install.yml`
+ * Run `ansible-playbook install.yml` to install and configure the system (Optionally with `--skip-tags`)
+ * (Optional) Run `ansible-playbook macos-security.yaml` to activate macos security features
+ * Configure DNS over HTTPS: https://paulmillr.com/posts/encrypted-dns/
 
 ## Ubuntu (20.04 or later)
 
