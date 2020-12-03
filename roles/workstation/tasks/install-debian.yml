@@ -18,29 +18,36 @@
   apt:
     state: present
     name:
+      - autoconf
+      - build-essential
+      - clang
+      - cmake
+      - cmake
+      - curl
       - docker-ce
       - docker-compose
-      - curl
-      - zlib1g-dev
-      - postgresql-client
-      - make
-      - clang
-      - unzip
-      - libssl-dev
       - editorconfig
-      - rustc
       - entr
+      - fd-find
       - fzf
-      - tldr
-      - vim
-      - zsh
       - git
-      - tmux
-      - llvm
+      - htop
       - libpq-dev
       - libsqlite3-dev
-      - autoconf
-      - fd-find
+      - libssl-dev
+      - llvm
+      - lm-sensors
+      - make
+      - neofetch
+      - postgresql-client
+      - rustc
+      - tldr
+      - tmux
+      - unzip
+      - vim
+      - xclip
+      - zlib1g-dev
+      - zsh
     update_cache: yes
   tags: [install]
 
