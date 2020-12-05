@@ -29,6 +29,7 @@
       - editorconfig
       - entr
       - fd-find
+      - fish
       - fzf
       - git
       - htop
