@@ -6,7 +6,6 @@
     dest: "~/{{ item }}"
   with_items:
     - .keymap.xkb
-    - .themes
     - .xsessionrc
   tags: [keyboard]
   when: ansible_os_family == "Debian"
