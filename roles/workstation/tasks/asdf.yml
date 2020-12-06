@@ -5,7 +5,7 @@
     creates: "~/.asdf/plugins/{{ item }}"
   tags: [asdf]
   environment:
-    PATH: "{{ ansible_env.PATH }}:/home/vagrant/.asdf/bin:/home/mattias/.asdf/bin"
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin:/home/mattias/.asdf/bin"
   with_items:
     - elixir
     - erlang
@@ -16,7 +16,7 @@
   shell: "asdf plugin-list | xargs -I _ asdf install _ latest "
   tags: [asdf]
   environment:
-    PATH: "{{ ansible_env.PATH }}:/home/vagrant/.asdf/bin:/home/mattias/.asdf/bin"
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
 
 - name: Fix asdf-nodejs installation
   command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring

@@ -57,7 +57,7 @@
         creates: "~/.asdf/plugins/{{ item }}"
       tags: [asdf]
       environment:
-        PATH: "{{ ansible_env.PATH }}:/home/vagrant/.asdf/bin"
+        PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
       with_items:
         - elixir
         - erlang
