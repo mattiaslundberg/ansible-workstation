@@ -102,6 +102,6 @@
 
 - name: Create iex history (otherwise it won't be saved)
   file:
-    state: touch
+    state: file
     path: ~/.iex_history
   tags: [elixir]
