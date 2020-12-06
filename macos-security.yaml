@@ -29,7 +29,11 @@
 
     - name: Disable captive portal
       become: true
-      command: defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
+      osx_defaults:
+        domain: /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist
+        key: Active
+        type: bool
+        value: false
 
     - name: Show filename extensions
       osx_defaults:
