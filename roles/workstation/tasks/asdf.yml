@@ -12,12 +12,12 @@
     - nodejs
     - terraform
 
+- name: Load nodejs key
+  command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  tags: [asdf]
+
 - name: Install latest version of everything managed by asdf
   shell: "asdf plugin-list | xargs -I _ asdf install _ latest "
   tags: [asdf]
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
-
-- name: Fix asdf-nodejs installation
-  command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  tags: [asdf]
