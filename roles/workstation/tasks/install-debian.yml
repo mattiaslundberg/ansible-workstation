@@ -33,6 +33,7 @@
       - fzf
       - git
       - htop
+      - inputplug
       - libpq-dev
       - libsqlite3-dev
       - libssl-dev
@@ -51,6 +52,11 @@
       - zsh
     update_cache: yes
   tags: [install]
+
+- name: Autostart inputplug
+  template:
+    src: templates/inputplug.desktop.j2
+    dest: ~/.config/autostart/inputplug.desktop
 
 - name: Symlink fd
   become: true
