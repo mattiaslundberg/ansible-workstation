@@ -32,13 +32,29 @@
       command: defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
 
     - name: Show filename extensions
-      command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+      osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleShowAllExtensions
+        type: bool
+        value: true
 
     - name: Show hidden files
-      command: defaults write com.apple.finder AppleShowAllFiles -bool true
+      osx_defaults:
+        domain: com.apple.finder
+        key: AppleShowAllFiles
+        type: bool
+        value: true
 
     - name: Require password from screensaver
-      command: defaults write com.apple.screensaver askForPassword -int 1
+      osx_defaults:
+        domain: com.apple.screensaver
+        key: askForPassword
+        type: int
+        value: 1
 
     - name: Require password immediately
-      command: defaults write com.apple.screensaver askForPasswordDelay -int 0
+      osx_defaults:
+        domain: com.apple.screensaver
+        key: askForPasswordDelay
+        type: int
+        value: 0
