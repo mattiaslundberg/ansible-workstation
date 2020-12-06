@@ -5,3 +5,23 @@
     dest: /Library/Keyboard Layouts/Custom Layout.bundle/
     src: roles/workstation/files/keymap/
   tags: [keyboard, keymap]
+
+- name: Disable annoying keyboard settings
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item }}"
+    type: bool
+    value: false
+  with_items:
+    - NSAutomaticCapitalizationEnabled
+    - NSAutomaticDashSubstitutionEnabled
+    - NSAutomaticPeriodSubstitutionEnabled
+    - NSAutomaticQuoteSubstitutionEnabled
+    - NSAutomaticSpellingCorrectionEnabled
+
+- name: Enable full keyboard access
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: int
+    value: 3
