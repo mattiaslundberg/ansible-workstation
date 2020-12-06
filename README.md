@@ -19,7 +19,9 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
  * Change computer name (Settings -> Sharing)
  * Generate ssh key and upload to github `ssh-keygen -t ed25519`
  * Install homebrew and ansible
+ * Copy `settings.example.yaml` to `settings.yaml` and edit with appropriate settings
  * Run `ansible-playbook install.yml` to install and configure the system (Optionally with `--skip-tags`)
+ * (Optional) Run `ansible-playbook hosts.yml` to add blocklist in hosts file
  * Configure DNS over HTTPS: https://paulmillr.com/posts/encrypted-dns/
 
 ## Ubuntu (20.04 or later)
