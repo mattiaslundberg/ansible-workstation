@@ -12,6 +12,7 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
  * `python` Don't install python versions
  * `elixir` Don't install elixir utils
  * `extra` Only install base packages
+ * `security` Don't setup macos security features
 
 ## macos
 
@@ -19,7 +20,6 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
  * Generate ssh key and upload to github `ssh-keygen -t ed25519`
  * Install homebrew and ansible
  * Run `ansible-playbook install.yml` to install and configure the system (Optionally with `--skip-tags`)
- * (Optional) Run `ansible-playbook macos-security.yaml` to activate macos security features
  * Configure DNS over HTTPS: https://paulmillr.com/posts/encrypted-dns/
 
 ## Ubuntu (20.04 or later)

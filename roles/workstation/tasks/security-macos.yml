@@ -1,0 +1,60 @@
+---
+- name: Activate system encryption
+  become: true
+  command: fdesetup enable
+
+- name: Activate firewall
+  become: true
+  command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+- name: Activate firewall logging
+  become: true
+  command: /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+
+- name: Activate stealth mode
+  become: true
+  command: /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+- name: Don't allow built-in applications automatically
+  become: true
+  command: /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
+
+- name: Don't allow signed applications automatically
+  become: true
+  command: /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
+
+- name: Disable captive portal
+  become: true
+  osx_defaults:
+    domain: /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist
+    key: Active
+    type: bool
+    value: false
+
+- name: Show filename extensions
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+
+- name: Show hidden files
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+
+- name: Require password from screensaver
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+
+- name: Require password immediately
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0

@@ -7,6 +7,11 @@
   import_tasks: install-macos.yml
   when: ansible_os_family == "Darwin"
 
+- name: Setup macOS security
+  import_tasks: security-macos.yml
+  when: ansible_os_family == "Darwin"
+  tags: [security]
+
 - name: Add dotfiles
   import_tasks: dotfiles.yml
   
