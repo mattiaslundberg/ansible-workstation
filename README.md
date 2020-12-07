@@ -26,13 +26,16 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
 
 ## Ubuntu (20.04 or later)
 
-Generate ssh key and upload to github
+ * Generate ssh key and upload to github
+ * Copy `settings.example.yaml` to `settings.yaml` and edit with appropriate settings
 
 ```
 sudo apt install ansible
 
 ansible-playbook install.yml
 ```
+
+ * (Optional) Run `ansible-playbook hosts.yml` to add blocklist in hosts file
 
 # Manual steps
 
