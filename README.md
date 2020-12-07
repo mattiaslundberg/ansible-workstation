@@ -34,16 +34,6 @@ sudo apt install ansible
 ansible-playbook install.yml
 ```
 
-## Arch Linux
-
-Generate ssh key and upload to github
-
-```
-pacman -S ansible
-
-ansible-playbook install.yml
-```
-
 # Manual steps
 
 ## Carbon Copy Cloner
