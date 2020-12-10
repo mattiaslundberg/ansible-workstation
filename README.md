@@ -23,6 +23,7 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
  * Clone repo: `git clone git@github.com:mattiaslundberg/ansible-workstation.git ~/Development/mattiaslundberg/ansible-workstation`
  * Copy `settings.example.yaml` to `settings.yaml` and edit with appropriate settings
  * Run `ansible-playbook install.yml` to install and configure the system (Optionally with `--skip-tags`)
+ * Congigure safari settings: `ansible-playbook safari.yml`
  * (Optional) Run `ansible-playbook hosts.yml` to add blocklist in hosts file
  * Configure DNS over HTTPS: https://paulmillr.com/posts/encrypted-dns/
 

@@ -1,0 +1,92 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Clear history
+      osx_defaults:
+        domain: com.apple.Safari
+        key: HistoryAgeInDaysLimit
+        type: int
+        value: 30
+
+    - name: Clear downloads
+      osx_defaults:
+        domain: com.apple.Safari
+        key: DownloadsClearingPolicy
+        type: int
+        value: 2
+        
+    - name: Always open in tabs
+      osx_defaults:
+        domain: com.apple.Safari
+        key: TabCreationPolicy
+        type: int
+        value: 2
+
+        
+    - name: Don't autofill passwords (use separate password manager)
+      osx_defaults:
+        domain: com.apple.Safari
+        key: AutoFillPasswords
+        type: bool
+        value: false
+
+    - name: No search suggestions
+      osx_defaults:
+        domain: com.apple.Safari
+        key: SuppressSearchSuggestions
+        type: bool
+        value: true
+
+    - name: No search suggestions
+      osx_defaults:
+        domain: com.apple.Safari
+        key: UniversalSearchEnabled
+        type: bool
+        value: false
+
+    - name: No preload
+      osx_defaults:
+        domain: com.apple.Safari
+        key: PreloadTopHit
+        type: bool
+        value: false
+
+    - name: Warn
+      osx_defaults:
+        domain: com.apple.Safari
+        key: WarnAboutFraudulentWebsites
+        type: bool
+        value: true
+
+    - name: No push prompts
+      osx_defaults:
+        domain: com.apple.Safari
+        key: CanPromptForPushNotifications
+        type: bool
+        value: false
+
+    - name: Show full url
+      osx_defaults:
+        domain: com.apple.Safari
+        key: ShowFullURLInSmartSearchField
+        type: bool
+        value: true
+      
+    - name: Activate developer mode
+      osx_defaults:
+        domain: com.apple.Safari
+        key: "{{ item }}"
+        type: bool
+        value: true
+      with_items:
+        - IncludeDevelopMenu
+        - WebKitDeveloperExtrasEnabledPreferenceKey
+
+    - name: Activate developer mode
+      osx_defaults:
+        domain: com.apple.Safari.SandboxBroker
+        key: ShowDevelopMenu
+        type: bool
+        value: true
