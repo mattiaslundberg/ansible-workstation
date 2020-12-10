@@ -58,3 +58,31 @@
     key: askForPasswordDelay
     type: int
     value: 0
+
+- name: Activate screensaver
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: idleTime
+    type: int
+    value: 600
+
+
+- name: Automatically download updates
+  osx_defaults:
+    domain: /Library/Preferences/com.apple.SoftwareUpdate
+    key: "{{ item }}"
+    type: bool
+    value: true
+  with_items: 
+    - AutomaticDownload
+    - AutomaticCheckEnabled
+    - AutomaticallyInstallMacOSUpdates
+    - ConfigDataInstall
+    - CriticalUpdateInstall
+
+- name: Autoupdate appstore
+  osx_defaults:
+    domain: /Library/Preferences/com.apple.commerce
+    key: AutoUpdate
+    type: bool
+    value: false

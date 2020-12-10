@@ -1,0 +1,42 @@
+---
+- name: Set dock size
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 35
+
+- name: Disable dock maginification
+  osx_defaults:
+    domain: com.apple.dock
+    key: magnification
+    type: bool
+    value: false
+
+- name: Show dock on right side
+  osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: right
+
+- name: Autohide dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+
+- name: disable show recents
+  osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+
+- name: Don't rearrange spaces
+  osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: false
