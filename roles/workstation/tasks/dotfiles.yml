@@ -14,11 +14,6 @@
     accept_hostkey: yes
   tags: [emacs]
 
-- name: Install doom-emacs
-  command: ~/.emacs.d/bin/doom -y install
-  args:
-    creates: ~/.emacs.d/.local/env
-
 - name: Clone elixir-ls (installed from upgrade command)
   git:
     dest: ~/.elixir-ls
@@ -45,7 +40,6 @@
     path: ~/.zshrc
   register: zshrc
   tags: [dotfiles]
-
 
 - name: Remove default zshrc
   file:
@@ -80,6 +74,12 @@
     - dotfiles
     - emacs
     - tmux
+
+- name: Install doom-emacs
+  command: ~/.emacs.d/bin/doom -y install
+  args:
+    creates: ~/.emacs.d/.local/env
+  tags: [emacs]
 
 - name: Create ctags config directory
   file:
