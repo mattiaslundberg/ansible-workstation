@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: [dev]
   become: false
 
   tasks:
@@ -39,8 +39,8 @@
 
     - name: Copy ssh key
       copy:
-        src: ~/.ssh/id_rsa
-        dest: ~/.ssh/id_rsa
+        src: ~/.ssh/id_ed25519
+        dest: ~/.ssh/id_ed25519
         mode: 0600
 
     - name: Install asdf
@@ -57,7 +57,7 @@
         creates: "~/.asdf/plugins/{{ item }}"
       tags: [asdf]
       environment:
-        PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
+        PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin:/root/.asdf/bin"
       with_items:
         - elixir
         - erlang
