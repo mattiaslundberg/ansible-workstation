@@ -22,7 +22,6 @@
       - build-essential
       - clang
       - cmake
-      - cmake
       - curl
       - docker-ce
       - docker-compose
