@@ -2,11 +2,10 @@
 - name: Install base packages
   homebrew:
     name:
-      - zsh  # Changing shell
-      - curl  # Installing
-      - git  # Cloning stuff
-      - luarocks  # Spacehammer/fennel
-      - antigen  # Shell config
+      - zsh # Changing shell
+      - curl # Installing
+      - luarocks # Spacehammer/fennel
+      - antigen # Shell config
     state: present
 
 - name: Restore all packages
