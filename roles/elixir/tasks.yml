@@ -1,0 +1,27 @@
+---
+- name: Install asdf
+  git:
+    dest: ~/.asdf
+    repo: "git@github.com:asdf-vm/asdf.git"
+    accept_hostkey: yes
+    update: no
+  when: ansible_os_family == "Debian"
+
+- name: Install asdf
+  homebrew:
+    name: asdf
+  when: ansible_os_family == "Darwin"
+
+- name: Install asdf plugins
+  command: "asdf plugin-add {{ item }}"
+  args:
+    creates: "~/.asdf/plugins/{{ item }}"
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
+  with_items: [elixir, erlang]
+
+- name: Install latest version of elixir and erlang
+  shell: "asdf install {{ item }} latest "
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
+  with_items: [elixir, erlang]

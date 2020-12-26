@@ -19,10 +19,6 @@
 - name: Add dotfiles
   import_tasks: dotfiles.yml
   
-- name: Setup asdf
-  import_tasks: asdf.yml
-  tags: [adsf]
-  
 - name: Setup python
   import_tasks: python.yml
   tags: [python]

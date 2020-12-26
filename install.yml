@@ -5,3 +5,10 @@
   roles:
     - role: workstation
     - role: keyboard
+    - role: asdf
+      vars:
+        lang: nodejs
+    - role: asdf
+      vars:
+        lang: terraform
+    - role: elixir
