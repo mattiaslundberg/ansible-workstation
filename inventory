@@ -1,2 +1,8 @@
 [workstation]
 localhost    ansible_connection=local
+
+[dev]
+
+
+[unifi]
+pi ansible_host=192.168.1.132 ansible_user=ubuntu

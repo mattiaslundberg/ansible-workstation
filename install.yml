@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: workstation
   become: false
 
   roles:
