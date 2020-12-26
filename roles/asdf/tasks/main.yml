@@ -12,7 +12,7 @@
     name: asdf
   when: ansible_os_family == "Darwin"
 
-- name: Install asdf plugins
+- name: Install asdf {{ lang }} plugins
   command: "asdf plugin-add {{ lang }}"
   args:
     creates: "~/.asdf/plugins/{{ lang }}"
@@ -23,7 +23,7 @@
   command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   when: lang == "nodejs"
 
-- name: Install latest version of language
+- name: Install latest version of {{ lang }}
   shell: "asdf install {{ lang }} latest "
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"

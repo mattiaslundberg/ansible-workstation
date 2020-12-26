@@ -2,7 +2,10 @@
 - hosts: [dev]
   become: false
 
-  tasks:
+  roles:
+    - role: elixir
+
+  before_tasks:
     - name: Install base packages
       become: true
       apt:
@@ -42,31 +45,6 @@
         src: ~/.ssh/id_ed25519
         dest: ~/.ssh/id_ed25519
         mode: 0600
-
-    - name: Install asdf
-      git:
-        dest: ~/.asdf
-        repo: "git@github.com:asdf-vm/asdf.git"
-        accept_hostkey: yes
-        update: no
-      tags: [asdf, install]
-
-    - name: Install asdf plugins
-      command: "asdf plugin-add {{ item }}"
-      args:
-        creates: "~/.asdf/plugins/{{ item }}"
-      tags: [asdf]
-      environment:
-        PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin:/root/.asdf/bin"
-      with_items:
-        - elixir
-        - erlang
-        - nodejs
-        - terraform
-
-    - name: Add asdf-nodejs keyring
-      command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-      tags: [asdf]
 
     - name: Install pyenv
       git:
