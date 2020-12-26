@@ -25,3 +25,25 @@
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
   with_items: [elixir, erlang]
+
+- name: Create iex history (otherwise it won't be saved)
+  file:
+    state: file
+    path: ~/.iex_history
+  tags: [elixir]
+
+- name: Clone elixir-ls
+  git:
+    dest: ~/.elixir-ls
+    repo: git@github.com:elixir-lsp/elixir-ls.git
+    accept_hostkey: yes
+    update: yes
+  tags: [elixir]
+
+- name: Install elixir-ls
+  shell: "mix deps.get && mix elixir_ls.release -o ./bin"
+  args:
+    creates: ~/.elixir-ls/bin
+    chdir: ~/.elixir-ls
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"

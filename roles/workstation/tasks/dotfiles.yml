@@ -14,14 +14,6 @@
     accept_hostkey: yes
   tags: [emacs]
 
-- name: Clone elixir-ls (installed from upgrade command)
-  git:
-    dest: ~/.elixir-ls
-    repo: git@github.com:elixir-lsp/elixir-ls.git
-    accept_hostkey: yes
-    update: yes
-  tags: [elixir]
-
 - name: Check default bashrc
   stat:
     path: ~/.bashrc
@@ -102,9 +94,3 @@
     accept_hostkey: yes
     update: no
   tags: [tmux]
-
-- name: Create iex history (otherwise it won't be saved)
-  file:
-    state: file
-    path: ~/.iex_history
-  tags: [elixir]
