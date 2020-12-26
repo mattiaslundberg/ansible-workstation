@@ -12,10 +12,3 @@
     repo: "git@github.com:pyenv/pyenv-virtualenv.git"
     accept_hostkey: yes
     update: no
-
-- name: Install python versions
-  shell: pyenv install {{ item }} -s
-  args:
-    creates: ~/.pyenv/versions/{{ item }}
-  with_items: "{{ pyenv_versions }}"
-  ignore_errors: yes

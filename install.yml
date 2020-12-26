@@ -12,3 +12,4 @@
       vars:
         lang: terraform
     - role: elixir
+    - role: python

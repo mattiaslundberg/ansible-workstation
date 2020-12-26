@@ -18,10 +18,6 @@
 
 - name: Add dotfiles
   import_tasks: dotfiles.yml
-  
-- name: Setup python
-  import_tasks: python.yml
-  tags: [python]
 
 - name: Add dotfiles on macOS
   import_tasks: dotfiles-macos.yml

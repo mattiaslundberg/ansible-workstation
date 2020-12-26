@@ -4,6 +4,7 @@
 
   roles:
     - role: elixir
+    - role: python
 
   before_tasks:
     - name: Install base packages
@@ -45,22 +46,6 @@
         src: ~/.ssh/id_ed25519
         dest: ~/.ssh/id_ed25519
         mode: 0600
-
-    - name: Install pyenv
-      git:
-        dest: ~/.pyenv
-        repo: "git@github.com:pyenv/pyenv.git"
-        accept_hostkey: yes
-        update: no
-      tags: [pyenv, install]
-
-    - name: Install pyenv-virtualenv
-      git:
-        dest: ~/.pyenv/plugins/pyenv-virtualenv
-        repo: "git@github.com:pyenv/pyenv-virtualenv.git"
-        accept_hostkey: yes
-        update: no
-      tags: [pyenv, install]
 
     - name: Add Docker GPG apt Key
       become: yes
