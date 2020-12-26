@@ -1,18 +1,4 @@
 ---
-- name: Add Docker GPG apt Key
-  become: yes
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
-  tags: [docker, install]
-
-- name: Add Docker Repository
-  become: yes
-  apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu bionic stable
-    state: present
-  tags: [docker, install]
-
 - name: Install base packages
   become: true
   apt:
@@ -23,8 +9,6 @@
       - clang
       - cmake
       - curl
-      - docker-ce
-      - docker-compose
       - editorconfig
       - entr
       - fd-find
@@ -102,29 +86,6 @@
     accept_hostkey: yes
     update: no
   tags: [dotfiles, zsh, install]
-
-- name: Install asdf
-  git:
-    dest: ~/.asdf
-    repo: "git@github.com:asdf-vm/asdf.git"
-    accept_hostkey: yes
-    update: no
-  tags: [asdf, install]
-
-- name: Create docker group
-  become: yes
-  group:
-    name: docker
-  tags: [docker, install]
-
-- name: Add current user to docker group
-  become: yes
-  user:
-    name: "{{ lookup('env', 'USER') }}"
-    append: yes
-    groups:
-      - docker
-  tags: [docker, install]
 
 - name: reset ssh connection to allow user changes to affect 'current login user'
   meta: reset_connection

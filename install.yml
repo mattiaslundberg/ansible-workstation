@@ -13,3 +13,4 @@
         lang: terraform
     - role: elixir
     - role: python
+    - role: docker

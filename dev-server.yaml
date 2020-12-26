@@ -5,6 +5,7 @@
   roles:
     - role: elixir
     - role: python
+    - role: docker
 
   before_tasks:
     - name: Install base packages
@@ -46,45 +47,6 @@
         src: ~/.ssh/id_ed25519
         dest: ~/.ssh/id_ed25519
         mode: 0600
-
-    - name: Add Docker GPG apt Key
-      become: yes
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-      tags: [docker, install]
-
-    - name: Add Docker Repository
-      become: yes
-      apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu bionic stable
-        state: present
-      tags: [docker, install]
-
-    - name: Update apt and install docker-ce
-      become: yes
-      apt:
-        update_cache: yes
-        name:
-          - docker-ce
-          - docker-compose
-        state: latest
-      tags: [docker, install]
-
-    - name: Create docker group
-      become: yes
-      group:
-        name: docker
-      tags: [docker, install]
-
-    - name: Add current user to docker group
-      become: yes
-      user:
-        name: "{{ lookup('env', 'USER') }}"
-        append: yes
-        groups:
-          - docker
-      tags: [docker]
 
     - name: bashrc
       copy:
