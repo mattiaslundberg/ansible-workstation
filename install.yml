@@ -4,3 +4,4 @@
 
   roles:
     - role: workstation
+    - role: keyboard

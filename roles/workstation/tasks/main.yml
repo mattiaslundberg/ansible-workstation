@@ -33,7 +33,3 @@
 
 - name: Add dotfiles on Linux
   import_tasks: dotfiles-linux.yml
-
-- name: Setup keyboard on macos
-  import_tasks: keymap-macos.yml
-  when: ansible_os_family == "Darwin"

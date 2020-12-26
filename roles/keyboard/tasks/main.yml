@@ -3,8 +3,9 @@
   become: true
   copy:
     dest: /Library/Keyboard Layouts/Custom Layout.bundle/
-    src: roles/workstation/files/keymap/
+    src: roles/keyboard/files/keymap/
   tags: [keyboard, keymap]
+  when: ansible_os_family == "Darwin"
 
 - name: Disable annoying keyboard settings
   osx_defaults:
@@ -18,6 +19,7 @@
     - NSAutomaticPeriodSubstitutionEnabled
     - NSAutomaticQuoteSubstitutionEnabled
     - NSAutomaticSpellingCorrectionEnabled
+  when: ansible_os_family == "Darwin"
 
 - name: Enable full keyboard access
   osx_defaults:
@@ -25,3 +27,4 @@
     key: AppleKeyboardUIMode
     type: int
     value: 3
+  when: ansible_os_family == "Darwin"
