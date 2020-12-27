@@ -1,0 +1,12 @@
+---
+- hosts: all
+
+  tasks:
+    - debug:
+        msg: "is amd64"
+      when: ansible_architecture == "x86_64"
+    - debug:
+        msg: "is not amd64"
+      when: ansible_architecture != "x86_64"
+    
+         

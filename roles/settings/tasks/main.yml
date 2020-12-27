@@ -1,0 +1,9 @@
+---
+- name: Setup macOS security
+  import_tasks: security-macos.yml
+  when: ansible_os_family == "Darwin"
+  tags: [security]
+
+- name: Setup macOS custom settings
+  import_tasks: settings-macos.yml
+  when: ansible_os_family == "Darwin"
