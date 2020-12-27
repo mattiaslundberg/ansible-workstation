@@ -78,11 +78,3 @@
     accept_hostkey: yes
     update: no
   tags: [dotfiles, fzf, install]
-
-- name: Zsh antigen
-  git:
-    dest: ~/.antigen.zsh
-    repo: "git@github.com:zsh-users/antigen.git"
-    accept_hostkey: yes
-    update: no
-  tags: [dotfiles, zsh, install]

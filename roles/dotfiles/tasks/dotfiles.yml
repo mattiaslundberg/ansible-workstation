@@ -94,3 +94,11 @@
     accept_hostkey: yes
     update: no
   tags: [tmux]
+
+- name: Zsh plugin manager
+  git:
+    dest: ~/.zinit/bin
+    repo: "https://github.com/zdharma/zinit.git"
+    accept_hostkey: yes
+    update: no
+  tags: [dotfiles, zsh, install]
