@@ -3,7 +3,7 @@
   become: false
 
   roles:
-    - role: workstation
+    - role: base
     - role: keyboard
     - role: asdf
       vars:
@@ -12,7 +12,3 @@
       vars:
         lang: terraform
     - role: elixir
-    - role: python
-    - role: docker
-    - role: dotfiles
-    - role: settings
