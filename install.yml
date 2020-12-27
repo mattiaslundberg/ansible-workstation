@@ -14,3 +14,4 @@
     - role: elixir
     - role: python
     - role: docker
+    - role: dotfiles
