@@ -44,8 +44,15 @@ ansible-playbook install.yml
 
 ## Carbon Copy Cloner
 
-Install and setup appropriate tasks.
+Setup appropriate tasks.
 
 ## Iterm2
 
 Import `iterm.json`
+
+## System
+
+- Activate nightshift
+- Activate keyboard switch shortcut
+- Activate touchpad gestures
+- Remove siri from touchbar and add lock
