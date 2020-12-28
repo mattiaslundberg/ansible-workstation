@@ -12,6 +12,13 @@
   command: brew bundle --file=Brewfile
   tags: [brew, extra]
 
+- name: Link emacs
+  become: yes
+  file:
+    state: link
+    src: /usr/local/Cellar/emacs-plus@28/28.0.50/Emacs.app
+    dest: /Applications/Emacs.app
+
 # - name: Link openssl
 #   file:
 #     path: /usr/local/lib/{{ item }}.dylib
