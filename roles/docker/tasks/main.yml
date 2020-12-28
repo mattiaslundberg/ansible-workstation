@@ -5,6 +5,7 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
   tags: [docker, install]
+  when: ansible_os_family == "Debian"
 
 - name: Add Docker Repository
   become: yes
@@ -12,6 +13,7 @@
     repo: deb https://download.docker.com/linux/ubuntu bionic stable
     state: present
   tags: [docker, install]
+  when: ansible_os_family == "Debian"
 
 - name: Update apt and install docker-ce
   become: yes
@@ -22,12 +24,14 @@
       - docker-compose
     state: latest
   tags: [docker, install]
+  when: ansible_os_family == "Debian"
 
 - name: Create docker group
   become: yes
   group:
     name: docker
   tags: [docker, install]
+  when: ansible_os_family == "Debian"
 
 - name: Add current user to docker group
   become: yes
@@ -37,3 +41,4 @@
     groups:
       - docker
   tags: [docker]
+  when: ansible_os_family == "Debian"
