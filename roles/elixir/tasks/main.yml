@@ -14,7 +14,7 @@
   tags: [elixir]
 
 - name: Install elixir-ls
-  shell: "mix deps.get && mix elixir_ls.release -o ./bin"
+  shell: "mix local.hex --force && mix local.rebar --force && mix deps.get && mix elixir_ls.release -o ./bin"
   args:
     creates: ~/.elixir-ls/bin
     chdir: ~/.elixir-ls
