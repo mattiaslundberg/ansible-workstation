@@ -63,6 +63,7 @@
     value: 600
 
 - name: Automatically download updates
+  become: yes
   osx_defaults:
     domain: /Library/Preferences/com.apple.SoftwareUpdate
     key: "{{ item }}"
@@ -76,6 +77,7 @@
     - CriticalUpdateInstall
 
 - name: Autoupdate appstore
+  become: yes
   osx_defaults:
     domain: /Library/Preferences/com.apple.commerce
     key: AutoUpdate
