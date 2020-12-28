@@ -1,7 +1,7 @@
 ---
 - name: Create iex history (otherwise it won't be saved)
   file:
-    state: file
+    state: touch
     path: ~/.iex_history
   tags: [elixir]
 
@@ -20,3 +20,4 @@
     chdir: ~/.elixir-ls
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
+  tags: [elixir]
