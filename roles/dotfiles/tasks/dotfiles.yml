@@ -95,6 +95,10 @@
     update: no
   tags: [tmux]
 
+- name: Install all tmux plugins
+  command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+  tags: [tmux]
+
 - name: Zsh plugin manager
   git:
     dest: ~/.zinit/bin
