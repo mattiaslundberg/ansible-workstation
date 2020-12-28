@@ -90,3 +90,11 @@
         key: ShowDevelopMenu
         type: bool
         value: true
+
+    - name: Restore session
+      osx_defaults:
+        domain: com.apple.Safari
+        key: AlwaysRestoreSessionAtLaunch
+        type: bool
+        value: true
+
