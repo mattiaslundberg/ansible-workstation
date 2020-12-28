@@ -1,8 +1,4 @@
 ---
-- name: Activate system encryption
-  become: true
-  command: fdesetup enable
-
 - name: Activate firewall
   become: true
   command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
