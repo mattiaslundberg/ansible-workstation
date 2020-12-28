@@ -70,7 +70,6 @@ brew "zsh"
 brew "d12frosted/emacs-plus/emacs-plus@28"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "authy"
-cask "bitwarden"
 cask "carbon-copy-cloner"
 cask "coconutbattery"
 cask "dash"
