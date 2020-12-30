@@ -25,7 +25,7 @@ Add `--skip-tags` with any of the following tags to skip parts of the setup:
 - Run `ansible-playbook install.yml` to install and configure the system (Optionally with `--skip-tags`)
 - Congigure safari settings: `ansible-playbook safari.yml`
 - (Optional) Run `ansible-playbook hosts.yml` to add blocklist in hosts file
-- Configure DNS over HTTPS: https://paulmillr.com/posts/encrypted-dns/
+- Configure DNS over HTTPS: `open cloudflare-https.mobileconfig` and accept the policy in system settings
 
 ## Ubuntu (20.04 or later)
 
