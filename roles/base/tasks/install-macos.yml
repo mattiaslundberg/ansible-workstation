@@ -1,4 +1,11 @@
 ---
+- name: Create custom brew cache
+  become: yes
+  file:
+    state: directory
+    path: /opt/HomebrewCache
+    owner: mattias
+
 - name: Install base packages
   homebrew:
     name:
@@ -7,10 +14,14 @@
       - luarocks # Spacehammer/fennel
       - antigen # Shell config
     state: present
+  env:
+    HOMEBREW_CACHE: /opt/HomebrewCache
 
 - name: Restore all packages
   command: brew bundle --file=Brewfile
   tags: [brew, extra]
+  env:
+    HOMEBREW_CACHE: /opt/HomebrewCache
 
 - name: Link emacs
   become: yes
