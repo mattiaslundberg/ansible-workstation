@@ -44,7 +44,7 @@ ansible-playbook install.yml
 
 ## Carbon Copy Cloner
 
-Setup appropriate tasks.
+Setup appropriate tasks. Import `CCC Task Filter.plist` to ignore some stuff that changes often
 
 ## Iterm2
 
