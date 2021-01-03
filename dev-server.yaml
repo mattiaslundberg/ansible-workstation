@@ -44,7 +44,7 @@
 
     - name: Copy ssh key
       copy:
-        src: ~/.ssh/id_ed25519
+        src: ~/.ssh/id_git
         dest: ~/.ssh/id_ed25519
         mode: 0600
 
