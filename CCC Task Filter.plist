@@ -56,12 +56,20 @@
 			<integer>3</integer>
 		</dict>
 		<dict>
+			<key>expressionString</key>
+			<string>.elixir_ls</string>
 			<key>ruleFlags</key>
 			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>expressionString</key>
 			<string>Steam</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>Docker Desktop</string>
 			<key>ruleFlags</key>
 			<integer>3</integer>
 		</dict>
