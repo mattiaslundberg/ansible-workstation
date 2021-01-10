@@ -45,6 +45,60 @@
 	<array>
 		<dict>
 			<key>expressionString</key>
+			<string>.emacs.d</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>.npm</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>.rustup</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>Docker.raw</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>com.docker.docker</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>Teams</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>Cache</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>Caches</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>.next</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
 			<string>.asdf</string>
 			<key>ruleFlags</key>
 			<integer>3</integer>
