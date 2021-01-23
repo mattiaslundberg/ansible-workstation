@@ -25,6 +25,15 @@
     state: link
     src: /usr/local/Cellar/emacs-plus@28/28.0.50/Emacs.app
     dest: /Applications/Emacs.app
+  when: ansible_architecture == "x86_64"
+
+- name: Link emacs
+  become: yes
+  file:
+    state: link
+    src: /opt/homebrew/Cellar/emacs-plus@28/28.0.50/Emacs.app
+    dest: /Applications/Emacs.app
+  when: ansible_architecture == "arm64"
 
 # - name: Link openssl
 #   file:
@@ -46,3 +55,10 @@
   become: true
   shell: chsh -s /usr/local/bin/zsh
   tags: [zsh]
+  when: ansible_architecture == "x86_64"
+
+- name: Set loginshell
+  become: true
+  shell: chsh -s /opt/homebrew/bin/zsh
+  tags: [zsh]
+  when: ansible_architecture == "arm64"
