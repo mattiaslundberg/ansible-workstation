@@ -12,6 +12,7 @@
     dest: ~/.emacs.d
     repo: "git@github.com:hlissner/doom-emacs.git"
     accept_hostkey: yes
+  ignore_errors: yes
   tags: [emacs]
 
 - name: Check default bashrc
