@@ -82,4 +82,4 @@
     domain: /Library/Preferences/com.apple.commerce
     key: AutoUpdate
     type: bool
-    value: false
+    value: true
