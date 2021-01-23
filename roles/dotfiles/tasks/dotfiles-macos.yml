@@ -33,7 +33,7 @@
   tags: [spacehammer]
 
 - name: Install fennel
-  command: luarocks install fennel
+  command: luarocks install --local fennel
   args:
-    creates: /usr/local/bin/fennel
+    creates: ~/.luarocks/bin/fennel
   tags: [spacehammer]
