@@ -57,7 +57,6 @@ brew "markdown"
 brew "mas"
 brew "ncdu"
 brew "neofetch"
-brew "osx-cpu-temp"
 brew "postgresql", restart_service: true
 brew "prettyping"
 brew "reattach-to-user-namespace"
