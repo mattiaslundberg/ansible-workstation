@@ -1,18 +1,9 @@
 ---
-- name: Create karabiner config directory
-  file:
-    state: directory
-    path: ~/.config/karabiner/
-  tags: [karabiner, keyboard]
-
-- name: Create Karabiner config
+- name: Symlink karabiner config
   file:
     state: link
-    src: ~/.dotfiles/.config/karabiner/{{ item }}
-    dest: ~/.config/karabiner/{{ item }}
-  with_items:
-    - complex_modifications
-    - karabiner.json
+    src: ~/.dotfiles/.config/karabiner/
+    dest: ~/.config/karabiner/
   tags: [karabiner, keyboard]
 
 - name: Symlink spacehammer config
