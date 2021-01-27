@@ -2,8 +2,8 @@
 - name: Symlink karabiner config
   file:
     state: link
-    src: ~/.dotfiles/.config/karabiner/
-    dest: ~/.config/karabiner/
+    src: ~/.dotfiles/.config/karabiner
+    dest: ~/.config/karabiner
   tags: [karabiner, keyboard]
 
 - name: Symlink spacehammer config
