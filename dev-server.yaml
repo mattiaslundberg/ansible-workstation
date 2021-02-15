@@ -36,12 +36,6 @@
         src: "/usr/bin/fdfind"
         dest: "/usr/bin/fd"
 
-    - name: Install snaps
-      command: "snap install --classic {{ item }}"
-      with_items:
-        - universal-ctags
-      become: yes
-
     - name: Copy ssh key
       copy:
         src: ~/.ssh/id_git

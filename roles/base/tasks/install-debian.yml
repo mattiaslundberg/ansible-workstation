@@ -53,11 +53,6 @@
   shell: "chsh -s /usr/bin/zsh {{ lookup('env', 'USER') }}"
   tags: [zsh]
 
-- name: Install universal-ctags
-  become: true
-  command: snap install --classic universal-ctags
-  tags: [install]
-
 - name: Install emacs
   become: yes
   command: snap install --classic --edge emacs
