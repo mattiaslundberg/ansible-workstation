@@ -105,6 +105,24 @@
 		</dict>
 		<dict>
 			<key>expressionString</key>
+			<string>.tldrc</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>.emacs.d</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
+			<string>.nerves</string>
+			<key>ruleFlags</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>expressionString</key>
 			<string>.pyenv</string>
 			<key>ruleFlags</key>
 			<integer>3</integer>
