@@ -2,8 +2,5 @@
 localhost    ansible_connection=local
 
 [dev]
-
-
-[unifi]
 pi ansible_host=192.168.1.132 ansible_user=ubuntu
 pidev ansible_host=192.168.1.224 ansible_user=pi
