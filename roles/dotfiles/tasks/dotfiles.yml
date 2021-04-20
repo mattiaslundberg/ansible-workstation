@@ -79,19 +79,6 @@
     creates: ~/.emacs.d/.local/env
   tags: [emacs]
 
-- name: Create ctags config directory
-  file:
-    state: directory
-    dest: ~/.ctags.d/
-  tags: [ctags, emacs]
-
-- name: Symlink new ctags config
-  file:
-    state: link
-    src: ~/.dotfiles/.ctags
-    dest: ~/.ctags.d/default.ctags
-  tags: [ctags, emacs]
-
 - name: Install Tmux Plugin Mangaer
   git:
     dest: ~/.tmux/plugins/tpm
