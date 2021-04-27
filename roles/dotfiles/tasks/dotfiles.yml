@@ -25,7 +25,7 @@
   file:
     state: absent
     dest: ~/.bashrc
-  when: not bashrc.stat.islnk
+  when: bashrc and bashrc.stat and not bashrc.stat.islnk
   tags: [dotfiles]
 
 - name: Check default zshrc
@@ -38,7 +38,7 @@
   file:
     state: absent
     dest: ~/.zshrc
-  when: not zshrc.stat.islnk
+  when: zshrc and zshrc.stat and not zshrc.stat.islnk
   tags: [dotfiles]
 
 - name: Create common symlinks
