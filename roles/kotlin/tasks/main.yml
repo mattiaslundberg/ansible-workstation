@@ -1,0 +1,8 @@
+---
+- name: Clone kotlin-language-server
+  git:
+    dest: ~/.kotlin-language-server
+    repo: git@github.com:fwcd/kotlin-language-server.git
+    accept_hostkey: yes
+    update: yes
+  tags: [kotlin]
