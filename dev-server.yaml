@@ -3,9 +3,10 @@
   become: false
 
   roles:
-    - role: elixir
+    - role: base
     - role: python
     - role: docker
+    - role: dotfiles
 
   before_tasks:
     - name: Install base packages
@@ -41,8 +42,3 @@
         src: ~/.ssh/id_git
         dest: ~/.ssh/id_ed25519
         mode: 0600
-
-    - name: bashrc
-      copy:
-        src: bashrc
-        dest: ~/.bashrc
