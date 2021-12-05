@@ -59,7 +59,6 @@
     - .tmux.conf
     - .doom.d
     - .gitconfig
-    - .tool-versions
     - .rgignore
     - .iex.exs
   tags:
