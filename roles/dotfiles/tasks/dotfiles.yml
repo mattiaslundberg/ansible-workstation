@@ -79,8 +79,8 @@
 
 - name: Zsh plugin manager
   git:
-    dest: ~/.zinit/bin
-    repo: "https://github.com/zdharma/zinit.git"
+    dest: ~/.zi/bin
+    repo: "https://github.com/z-shell/zi.git"
     accept_hostkey: yes
     update: no
   tags: [dotfiles, zsh, install]
