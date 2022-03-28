@@ -15,30 +15,16 @@
   ignore_errors: yes
   tags: [emacs]
 
-- name: Check default bashrc
-  stat:
-    path: ~/.bashrc
-  register: bashrc
-  tags: [dotfiles]
-
 - name: Remove default bashrc
   file:
     state: absent
     dest: ~/.bashrc
-  when: bashrc and bashrc.stat and not bashrc.stat.islnk
-  tags: [dotfiles]
-
-- name: Check default zshrc
-  stat:
-    path: ~/.zshrc
-  register: zshrc
   tags: [dotfiles]
 
 - name: Remove default zshrc
   file:
     state: absent
     dest: ~/.zshrc
-  when: zshrc and zshrc.stat and not zshrc.stat.islnk
   tags: [dotfiles]
 
 - name: Create common symlinks
