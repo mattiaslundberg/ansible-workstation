@@ -19,10 +19,6 @@
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
 
-- name: Load nodejs key
-  command: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  when: lang == "nodejs"
-
 - name: Install latest version of {{ lang }}
   shell: "asdf install {{ lang }} latest "
   environment:
