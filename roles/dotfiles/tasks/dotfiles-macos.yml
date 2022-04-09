@@ -28,10 +28,3 @@
   args:
     creates: ~/.luarocks/bin/fennel
   tags: [spacehammer]
-
-- name: Load iterm color schemes
-  command: "open {{ item }}.itermcolors"
-  with_items:
-    - AtomOne
-    - AtomOneLight
-  tags: [iterm]
