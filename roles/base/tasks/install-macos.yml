@@ -23,7 +23,7 @@
   become: yes
   file:
     state: link
-    src: /opt/homebrew/Cellar/emacs-plus@28/28.0.50/Emacs.app
+    src: /opt/homebrew/opt/emacs-plus@28/Emacs.app
     dest: /Applications/Emacs.app
 
 # - name: Link openssl
