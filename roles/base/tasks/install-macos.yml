@@ -44,12 +44,5 @@
 
 - name: Set loginshell
   become: true
-  shell: chsh -s /usr/local/bin/zsh
-  tags: [zsh]
-  when: ansible_architecture == "x86_64"
-
-- name: Set loginshell
-  become: true
   shell: chsh -s /opt/homebrew/bin/zsh
   tags: [zsh]
-  when: ansible_architecture == "arm64"
