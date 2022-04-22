@@ -4,20 +4,3 @@
     state: touch
     path: ~/.iex_history
   tags: [elixir]
-
-- name: Clone elixir-ls
-  git:
-    dest: ~/.elixir-ls
-    repo: git@github.com:elixir-lsp/elixir-ls.git
-    accept_hostkey: yes
-    update: yes
-  tags: [elixir]
-
-- name: Install elixir-ls
-  shell: "mix local.hex --force && mix local.rebar --force && mix deps.get && mix elixir_ls.release -o ./bin"
-  args:
-    creates: ~/.elixir-ls/bin
-    chdir: ~/.elixir-ls
-  environment:
-    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
-  tags: [elixir]
