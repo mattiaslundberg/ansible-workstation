@@ -10,7 +10,7 @@
 - name: Clone doom-emacs repo
   git:
     dest: ~/.emacs.d
-    repo: "git@github.com:hlissner/doom-emacs.git"
+    repo: "git@github.com:doomemacs/doomemacs.git"
     accept_hostkey: yes
   ignore_errors: yes
   tags: [emacs]
