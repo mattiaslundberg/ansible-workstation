@@ -12,7 +12,6 @@
       - zsh # Changing shell
       - curl # Installing
       - luarocks # Spacehammer/fennel
-      - antigen # Shell config
     state: present
 
 - name: Restore all packages
