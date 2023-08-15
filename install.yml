@@ -11,8 +11,13 @@
     - role: asdf
       vars:
         lang: terraform
+    - role: asdf
+      vars:
+        lang: python
+    - role: asdf
+      vars:
+        lang: direnv
     - role: elixir
-    - role: python
     - role: docker
     - role: dotfiles
     - role: settings
