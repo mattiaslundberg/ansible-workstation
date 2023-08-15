@@ -47,6 +47,7 @@
     - .gitconfig
     - .rgignore
     - .iex.exs
+    - .default-python-packages
   tags:
     - dotfiles
     - emacs
