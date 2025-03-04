@@ -23,9 +23,3 @@
   shell: "asdf install {{ lang }} latest "
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"
-
-- name: Setup direnv
-  when: lang == "direnv"
-  command: "asdf direnv setup --shell zsh --version latest --no-touch-rc-file"
-  environment:
-    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.asdf/bin"

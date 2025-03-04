@@ -48,7 +48,6 @@
     - .rgignore
     - .iex.exs
     - .default-python-packages
-    - .config/direnv/direnvrc
   tags:
     - dotfiles
     - emacs

@@ -14,9 +14,6 @@
     - role: asdf
       vars:
         lang: python
-    - role: asdf
-      vars:
-        lang: direnv
     - role: elixir
     - role: docker
     - role: dotfiles
