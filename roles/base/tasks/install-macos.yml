@@ -1,20 +1,4 @@
 ---
-- name: Check for Homebrew
-  stat:
-    path: "{{ item }}"
-  register: brew_binaries
-  loop:
-    - /opt/homebrew/bin/brew
-    - /usr/local/bin/brew
-  tags: [minimal]
-
-- name: Install Homebrew
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  environment:
-    NONINTERACTIVE: "1"
-  when: brew_binaries.results | selectattr('stat.exists') | list | length == 0
-  tags: [minimal]
-
 - name: Install core CLI packages
   homebrew:
     name:
