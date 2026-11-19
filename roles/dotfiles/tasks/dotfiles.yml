@@ -6,6 +6,7 @@
     recursive: yes
     accept_hostkey: yes
   ignore_errors: yes
+  tags: [minimal]
 
 - name: Clone doom-emacs repo
   git:
@@ -19,19 +20,26 @@
   file:
     state: absent
     dest: ~/.bashrc
-  tags: [dotfiles]
+  tags: [dotfiles, minimal]
 
 - name: Remove default zshrc
   file:
     state: absent
     dest: ~/.zshrc
-  tags: [dotfiles]
+  tags: [dotfiles, minimal]
+
+- name: Ensure direnv config directory exists
+  file:
+    path: ~/.config/direnv
+    state: directory
+  tags: [dotfiles, minimal]
 
 - name: Create common symlinks
   file:
     state: link
     src: "~/.dotfiles/{{ item }}"
     dest: "~/{{ item }}"
+    force: yes
   with_items:
     - .editorconfig
     - .aliases
@@ -52,6 +60,7 @@
     - dotfiles
     - emacs
     - tmux
+    - minimal
 
 - name: Symlink bin
   file:

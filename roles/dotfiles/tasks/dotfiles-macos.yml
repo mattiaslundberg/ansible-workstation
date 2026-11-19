@@ -1,10 +1,29 @@
 ---
+- name: Ensure ~/.config exists
+  file:
+    path: ~/.config
+    state: directory
+  tags: [karabiner, keyboard, minimal]
+
+- name: Check karabiner config path
+  stat:
+    path: ~/.config/karabiner
+  register: karabiner_config
+  tags: [karabiner, keyboard, minimal]
+
+- name: Remove default Karabiner config directory
+  file:
+    path: ~/.config/karabiner
+    state: absent
+  when: karabiner_config.stat.exists | default(false) and not karabiner_config.stat.islnk | default(false)
+  tags: [karabiner, keyboard, minimal]
+
 - name: Symlink karabiner config
   file:
     state: link
     src: ~/.dotfiles/.config/karabiner
     dest: ~/.config/karabiner
-  tags: [karabiner, keyboard]
+  tags: [karabiner, keyboard, minimal]
 
 - name: Symlink spacehammer config
   file:

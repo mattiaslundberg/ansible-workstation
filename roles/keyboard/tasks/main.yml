@@ -4,7 +4,7 @@
   copy:
     dest: /Library/Keyboard Layouts/Custom Layout.bundle/
     src: roles/keyboard/files/keymap/
-  tags: [keyboard, keymap]
+  tags: [keyboard, keymap, minimal]
   when: ansible_os_family == "Darwin"
 
 - name: Disable annoying keyboard settings

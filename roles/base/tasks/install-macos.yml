@@ -1,4 +1,40 @@
 ---
+- name: Check for Homebrew
+  stat:
+    path: "{{ item }}"
+  register: brew_binaries
+  loop:
+    - /opt/homebrew/bin/brew
+    - /usr/local/bin/brew
+  tags: [minimal]
+
+- name: Install Homebrew
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  environment:
+    NONINTERACTIVE: "1"
+  when: brew_binaries.results | selectattr('stat.exists') | list | length == 0
+  tags: [minimal]
+
+- name: Install core CLI packages
+  homebrew:
+    name:
+      - git
+      - coreutils
+      - curl
+    state: present
+  environment:
+    PATH: /opt/homebrew/bin:/usr/local/bin:{{ ansible_env.PATH }}
+  tags: [minimal]
+
+- name: Install Karabiner-Elements
+  homebrew_cask:
+    name: karabiner-elements
+    state: present
+    accept_external_apps: yes
+  environment:
+    PATH: /opt/homebrew/bin:/usr/local/bin:{{ ansible_env.PATH }}
+  tags: [minimal, karabiner, keyboard]
+
 - name: Create custom brew cache
   become: yes
   file:
@@ -18,21 +54,6 @@
   command: brew bundle --file=Brewfile
   tags: [brew, extra]
 
-- name: Link emacs
-  become: yes
-  file:
-    state: link
-    src: /opt/homebrew/opt/emacs-plus@29/Emacs.app
-    dest: /Applications/Emacs.app
-
-# - name: Link openssl
-#   file:
-#     path: /usr/local/lib/{{ item }}.dylib
-#     src: /usr/local/opt/openssl/lib/{{ item }}.dylib
-#     state: link
-#   with_items:
-#     - libssl
-#     - libcrypto
 
 - name: Add brew zsh as allowed shell
   become: yes
